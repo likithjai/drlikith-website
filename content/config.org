@@ -776,12 +776,6 @@ for task dependencies
   (org-edna-mode)
 #+end_src
 
-* vertico
-
-#+begin_src emacs-lisp
-
-  
-#+end_src
 
 * other function(s)
 
