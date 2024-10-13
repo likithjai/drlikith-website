@@ -1,3 +1,5 @@
 * hello
 
 welcome to a new version of ~drlikith.com~ hosted using github pages. i hope i get to post here more often
+
+here is a link to my [[./config.org][emacs configuration]]
