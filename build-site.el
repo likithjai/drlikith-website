@@ -36,6 +36,10 @@
 	     :with-toc nil ;;include a table of contents
 	     :section-numbers nil ;; don't include section numbers
 	     :time-stamp-file nil))) ;; don't include timestamp in file
+(setq org-html-validation-link nil ;; don't show validation link
+	  org-html-head-include-scripts nil ;; use our own scripts
+	  org-html-head-include-default-style nil ;; use our own styles
+	  org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
 (org-publish-all t)
 
 
