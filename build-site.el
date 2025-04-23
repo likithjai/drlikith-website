@@ -32,7 +32,7 @@
 	     :publishing-directory "./public"
 	     :publishing-function 'org-html-publish-to-html
 	     :with-author nil ;; doesn't include author name
-	     :with-creator t ;;include emacs and org versions in footer
+	     :with-creator nil ;;include emacs and org versions in footer
 	     :with-toc nil ;;include a table of contents
 	     :section-numbers nil ;; don't include section numbers
 	     :time-stamp-file nil))) ;; don't include timestamp in file
