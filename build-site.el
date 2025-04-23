@@ -28,6 +28,7 @@
       (list
        (list "drlikith-website"
 	     :recursive t
+		 :base-url "https://likithjai.github.io/drlikith-website/"
 	     :base-directory "./content"
 	     :publishing-directory "./public"
 	     :publishing-function 'org-html-publish-to-html
