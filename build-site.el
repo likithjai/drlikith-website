@@ -30,7 +30,7 @@
 	     :recursive t
 		 :base-url "https://likithjai.github.io/drlikith-website/"
 	     :base-directory "./content"
-	     :publishing-directory "./public"
+	     :publishing-directory "./docs"
 	     :publishing-function 'org-html-publish-to-html
 	     :with-author nil ;; doesn't include author name
 	     :with-creator nil ;;include emacs and org versions in footer
