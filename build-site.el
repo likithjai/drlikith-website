@@ -86,6 +86,7 @@
          :publishing-function org-html-publish-to-html
          :auto-sitemap nil
 		 :with-toc nil
+		 :section-numbers nil
 		 :html-head ,org-html-head
          :htmlized-source t)
         
