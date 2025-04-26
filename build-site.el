@@ -64,6 +64,7 @@
          :auto-preamble t
          :auto-sitemap nil  ; We'll handle the blog index separately
          :htmlized-source t
+		 :with-toc nil
          :html-head ,org-html-head)
         
         ("site-blog-posts"
@@ -84,6 +85,7 @@
          :recursive nil
          :publishing-function org-html-publish-to-html
          :auto-sitemap nil
+		 :with-toc nil
 		 :html-head ,org-html-head
          :htmlized-source t)
         
