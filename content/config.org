@@ -3745,3 +3745,15 @@ for task dependencies
   				 :stream t
   				 :models '(deepseek-r1:latest)))
 #+end_src
+
+
+* helper functions for website
+
+#+begin_src emacs-lisp
+  (defun update-blog-index ()
+    (interactive)
+    (find-file "~/Documents/website/drlikith-website/content/blog-index.org")
+    (org-ctrl-c-ctrl-c) ; execute the elisp code
+    (save-buffer)
+    (org-html-export-to-html))
+#+end_src

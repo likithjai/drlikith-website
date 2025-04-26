@@ -1,0 +1,11 @@
+#+title: coming back to life
+#+date: <2025-04-26 Sat>
+#+description: a brief summary of this post
+#+options: toc:nil num:nil # disable TOC/numbers for this post
+
+* Introduction
+
+this is my first blog post...
+
+* main content
+more details here...

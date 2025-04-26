@@ -1,0 +1,37 @@
+#+TITLE: my blog
+#+OPTIONS: toc:nil
+
+* Recent Posts
+
+
+
+
+
+#+BEGIN_SRC emacs-lisp :exports results :results html :eval yes
+
+  (let* ((post-dir "blog/")
+       (posts (directory-files post-dir t "\\.org$"))
+       (sorted-posts (sort posts (lambda (a b)
+                                   (string< (file-name-nondirectory a)
+                                            (file-name-nondirectory b)))))
+       (reversed-posts (reverse sorted-posts)))
+  (mapconcat
+   (lambda (post)
+     (with-current-buffer (find-file-noselect post)
+       (let ((title (or (org-export-get-title (org-export-get-environment))
+                        (file-name-nondirectory post)))
+             (date (org-entry-get (point-min) "DATE")))
+         (concat
+          (format "** [[file:blog/%s][%s]]\n" 
+                  (file-name-nondirectory post) title)
+          (when date (format "<small>%s</small>\n\n" date))
+          "#+BEGIN_EXPORT html\n<div class=\"post-excerpt\">\n"
+          (substring (buffer-string) 0 (min 300 (length (buffer-string))))
+          "... [[file:blog/%s][Read More]]</div>\n#+END_EXPORT\n"
+          (file-name-nondirectory post)))))
+   reversed-posts
+   "\n"))
+
+
+
+#+END_SRC
