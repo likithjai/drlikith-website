@@ -3729,3 +3729,19 @@ for task dependencies
   		  fzf/window-height 30))
 
 #+end_src
+
+* gptel
+
+
+
+#+begin_src emacs-lisp
+  (use-package gptel
+    :ensure t)
+    
+  (setq
+   gptel-model 'deepseek-r1:latest
+   gptel-backend (gptel-make-ollama "Ollama"
+  				 :host "localhost:11434"
+  				 :stream t
+  				 :models '(deepseek-r1:latest)))
+#+end_src

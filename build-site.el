@@ -21,7 +21,7 @@
 (setq org-html-validation-link nil
       org-html-head-include-scripts nil
       org-html-head-include-default-style nil
-      org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
+      org-html-head "<link rel=\"stylesheet\" href=\"./styles/styles.css\" />")
 
 ;; define the publishing project
 (setq org-publish-project-alist
@@ -30,7 +30,7 @@
 	     :recursive t
 		 :base-url "https://likithjai.github.io/drlikith-website/"
 	     :base-directory "./content"
-	     :publishing-directory "./docs"
+	     :publishing-directory "."
 	     :publishing-function 'org-html-publish-to-html
 	     :with-author nil ;; doesn't include author name
 	     :with-creator nil ;;include emacs and org versions in footer
@@ -40,7 +40,7 @@
 (setq org-html-validation-link nil ;; don't show validation link
 	  org-html-head-include-scripts nil ;; use our own scripts
 	  org-html-head-include-default-style nil ;; use our own styles
-	  org-html-head "<link rel=\"stylesheet\" href=\"https://cdn.simplecss.org/simple.min.css\" />")
+	  org-html-head "<link rel=\"stylesheet\" href=\"./styles/styles.css\" />")
 (org-publish-all t)
 
 
