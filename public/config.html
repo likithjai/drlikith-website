@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-26 Sat 16:24 -->
+<!-- 2025-04-26 Sat 16:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs config</title>
@@ -19,129 +19,129 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgbd09d52">1. straight.el</a></li>
-<li><a href="#orgeedfb65">2. general configuration</a></li>
-<li><a href="#orgfc6190d">3. important programs to load first</a></li>
-<li><a href="#orga37de1b">4. garbage collections</a></li>
-<li><a href="#orgb8c8138">5. registers</a></li>
-<li><a href="#org6ce48d0">6. paths</a></li>
-<li><a href="#orga37433f">7. general.el (main keybindings set here)</a>
+<li><a href="#orga2beee7">straight.el</a></li>
+<li><a href="#org7aa506c">general configuration</a></li>
+<li><a href="#org36066d0">important programs to load first</a></li>
+<li><a href="#orgde8eca5">garbage collections</a></li>
+<li><a href="#orga2e9237">registers</a></li>
+<li><a href="#orgc1fea89">paths</a></li>
+<li><a href="#org95b203a">general.el (main keybindings set here)</a>
 <ul>
-<li><a href="#orgb5f0c25">7.1. preamble</a></li>
-<li><a href="#orgc5d8b1a">7.2. applications</a></li>
-<li><a href="#orgd8727de">7.3. buffers</a></li>
-<li><a href="#orgd5d7dff">7.4. files</a></li>
-<li><a href="#org9564310">7.5. my files</a></li>
-<li><a href="#org54d089d">7.6. help/emacs</a></li>
-<li><a href="#orgba93fc4">7.7. text</a></li>
-<li><a href="#orgce797c3">7.8. toggles/visuals</a></li>
-<li><a href="#org329ecdb">7.9. windows</a></li>
-<li><a href="#org7c8d99d">7.10. all-mode keybindings</a></li>
-<li><a href="#orgcdb8296">7.11. non-insert mode keybindings (normal, visual, motion)</a></li>
-<li><a href="#org59948cb">7.12. insert mode keymaps</a></li>
-<li><a href="#org263ebe8">7.13. emacs mode keymaps</a></li>
+<li><a href="#orgee7d5f2">preamble</a></li>
+<li><a href="#org707bd4a">applications</a></li>
+<li><a href="#org0a6248e">buffers</a></li>
+<li><a href="#org5f4e733">files</a></li>
+<li><a href="#org923841c">my files</a></li>
+<li><a href="#orgd68e67e">help/emacs</a></li>
+<li><a href="#org124b56f">text</a></li>
+<li><a href="#org5e88143">toggles/visuals</a></li>
+<li><a href="#orga57aaab">windows</a></li>
+<li><a href="#org014765b">all-mode keybindings</a></li>
+<li><a href="#orgbe60139">non-insert mode keybindings (normal, visual, motion)</a></li>
+<li><a href="#org81ce1ff">insert mode keymaps</a></li>
+<li><a href="#orga224641">emacs mode keymaps</a></li>
 </ul>
 </li>
-<li><a href="#orgff30e28">8. ivy</a></li>
-<li><a href="#org0454e47">9. all the icons and all the icons dired</a></li>
-<li><a href="#org354c959">10. doom modeline and themes</a></li>
-<li><a href="#orge2827bd">11. default emacs frame features</a></li>
-<li><a href="#org26de5fd">12. themes and icons</a></li>
-<li><a href="#org0008e25">13. line numbers, fringe, hl-line</a></li>
-<li><a href="#org4bf239b">14. writeroom + visual-fill-column</a></li>
-<li><a href="#org37beed5">15. which-key</a></li>
-<li><a href="#orgf101f0f">16. counsel</a></li>
-<li><a href="#orgf30b090">17. prescient</a></li>
-<li><a href="#org9570589">18. smartparens</a></li>
-<li><a href="#org8eb575c">19. mixed-pitch</a></li>
-<li><a href="#org997e9df">20. evil-anzu (search and replace)</a></li>
-<li><a href="#org67058b9">21. avy</a></li>
-<li><a href="#orgf4657bb">22. clipboard (simpleclip)</a></li>
-<li><a href="#org14ff46c">23. undo/redo (undofu)</a></li>
-<li><a href="#orgf6dd83f">24. super-save</a></li>
-<li><a href="#orgec1bbee">25. saveplace</a></li>
-<li><a href="#org94c9bb2">26. yasnippet</a></li>
-<li><a href="#orgb763e35">27. helpful</a></li>
-<li><a href="#orgd6dbf99">28. rainbow-delimiters</a></li>
-<li><a href="#orgad6b989">29. dired and dired-single</a></li>
-<li><a href="#org7132abd">30. lsp-mode</a></li>
-<li><a href="#org069bc6c">31. evil mode</a></li>
-<li><a href="#org72643c4">32. magit</a></li>
-<li><a href="#org6e5ad90">33. forge</a></li>
-<li><a href="#org0e176ba">34. evil nerd commenter</a></li>
-<li><a href="#orgdc27c72">35. projectile</a></li>
-<li><a href="#org1322730">36. dap mode</a></li>
-<li><a href="#org74432b6">37. corfu (+ extensions)</a></li>
-<li><a href="#org634279d">38. spellcheck (flyspell)</a></li>
-<li><a href="#org3244817">39. eglot</a></li>
-<li><a href="#orga66384f">40. python stuff</a></li>
-<li><a href="#orgd8d93f0">41. typescript</a></li>
-<li><a href="#orgfa113be">42. company</a></li>
-<li><a href="#org7a02eb5">43. terminal stuff</a></li>
-<li><a href="#orga7fc8f0">44. org mode stuff</a></li>
-<li><a href="#orgbc8bb13">45. tags, todos, priorities</a>
+<li><a href="#orgf4dfa44">ivy</a></li>
+<li><a href="#org584666d">all the icons and all the icons dired</a></li>
+<li><a href="#org2d7d07b">doom modeline and themes</a></li>
+<li><a href="#org4338047">default emacs frame features</a></li>
+<li><a href="#org1c31636">themes and icons</a></li>
+<li><a href="#org99344d3">line numbers, fringe, hl-line</a></li>
+<li><a href="#orge7b6ad6">writeroom + visual-fill-column</a></li>
+<li><a href="#org21120bb">which-key</a></li>
+<li><a href="#orgb2add3f">counsel</a></li>
+<li><a href="#org7c8cef3">prescient</a></li>
+<li><a href="#orge32d50d">smartparens</a></li>
+<li><a href="#orgf8e4bee">mixed-pitch</a></li>
+<li><a href="#orgf57dfac">evil-anzu (search and replace)</a></li>
+<li><a href="#orgaf25c5f">avy</a></li>
+<li><a href="#org56d84a4">clipboard (simpleclip)</a></li>
+<li><a href="#org3fbfbdc">undo/redo (undofu)</a></li>
+<li><a href="#org72bb907">super-save</a></li>
+<li><a href="#org1e0e5fd">saveplace</a></li>
+<li><a href="#org9d226a5">yasnippet</a></li>
+<li><a href="#org03e39dd">helpful</a></li>
+<li><a href="#org14b2a21">rainbow-delimiters</a></li>
+<li><a href="#orgb7779dc">dired and dired-single</a></li>
+<li><a href="#org723eb4f">lsp-mode</a></li>
+<li><a href="#orgd65cb44">evil mode</a></li>
+<li><a href="#org24fd191">magit</a></li>
+<li><a href="#org0c51e7b">forge</a></li>
+<li><a href="#org3fea908">evil nerd commenter</a></li>
+<li><a href="#org36ae14d">projectile</a></li>
+<li><a href="#orge3a980b">dap mode</a></li>
+<li><a href="#orgf815448">corfu (+ extensions)</a></li>
+<li><a href="#org6916452">spellcheck (flyspell)</a></li>
+<li><a href="#orgdc6fd79">eglot</a></li>
+<li><a href="#org026e264">python stuff</a></li>
+<li><a href="#orgecaefbf">typescript</a></li>
+<li><a href="#org95acd95">company</a></li>
+<li><a href="#orge244fee">terminal stuff</a></li>
+<li><a href="#orgca4d2bf">org mode stuff</a></li>
+<li><a href="#orgcbb9b46">tags, todos, priorities</a>
 <ul>
-<li><a href="#orgbf9965d">45.1. tags</a></li>
-<li><a href="#orgcb48b92">45.2. todo/workflow states</a></li>
-<li><a href="#org7e7b64a">45.3. priorities</a></li>
-<li><a href="#orgba726d8">45.4. org babel</a></li>
-<li><a href="#orga020651">45.5. org mode tagging stuff</a></li>
-<li><a href="#org3f40dfd">45.6. workflow states</a></li>
-<li><a href="#org7d5dc30">45.7. org mode agenda views</a></li>
-<li><a href="#org8adb122">45.8. other org mode stuff</a></li>
-<li><a href="#org6a7d2d3">45.9. org roam</a></li>
-<li><a href="#org91f4ea6">45.10. org-edna</a></li>
-<li><a href="#org94f3507">45.11. org-fragtog</a></li>
-<li><a href="#org8067a9d">45.12. org-tree-slide</a></li>
-<li><a href="#org868fe1b">45.13. org-download</a></li>
-<li><a href="#orgf1f5368">45.14. valign</a></li>
+<li><a href="#org16beaaf">tags</a></li>
+<li><a href="#orgb572156">todo/workflow states</a></li>
+<li><a href="#org9029155">priorities</a></li>
+<li><a href="#org44f453b">org babel</a></li>
+<li><a href="#orgab8c724">org mode tagging stuff</a></li>
+<li><a href="#org0d064f1">workflow states</a></li>
+<li><a href="#orgf646d93">org mode agenda views</a></li>
+<li><a href="#org13add05">other org mode stuff</a></li>
+<li><a href="#org8c5533e">org roam</a></li>
+<li><a href="#org062e1c6">org-edna</a></li>
+<li><a href="#orgb7dfb04">org-fragtog</a></li>
+<li><a href="#org199b414">org-tree-slide</a></li>
+<li><a href="#org2e1a398">org-download</a></li>
+<li><a href="#org5c0b1de">valign</a></li>
 </ul>
 </li>
-<li><a href="#org1885207">46. org mode keybindings</a>
+<li><a href="#org3b24c01">org mode keybindings</a>
 <ul>
-<li><a href="#orgb314a57">46.1. org mode comma leader key setup</a></li>
-<li><a href="#orgd6a88fa">46.2. org exporting</a></li>
-<li><a href="#orge000afe">46.3. latex classes</a></li>
-<li><a href="#org440760d">46.4. misc org mode</a></li>
+<li><a href="#org962a649">org mode comma leader key setup</a></li>
+<li><a href="#orgd9fc853">org exporting</a></li>
+<li><a href="#org4b85fc2">latex classes</a></li>
+<li><a href="#orged4e248">misc org mode</a></li>
 </ul>
 </li>
-<li><a href="#orgbb1a540">47. other function(s)</a></li>
-<li><a href="#org49e8402">48. vertico</a></li>
-<li><a href="#orgd7bf6e6">49. consult</a></li>
-<li><a href="#org34c74c3">50. nix mode</a></li>
-<li><a href="#orga26cd56">51. treemacs</a></li>
-<li><a href="#org4f880f8">52. javascript stuff</a></li>
-<li><a href="#org10e42f8">53. start page</a></li>
-<li><a href="#org364894d">54. dashboard</a></li>
-<li><a href="#org8174cae">55. perspective</a></li>
-<li><a href="#org8b534e1">56. miscellaneous settings</a></li>
-<li><a href="#org2e71d8f">57. deft</a></li>
-<li><a href="#org0b97ea6">58. popper.el</a></li>
-<li><a href="#orge5f8692">59. coding stuff</a>
+<li><a href="#org68388eb">other function(s)</a></li>
+<li><a href="#org12d1e42">vertico</a></li>
+<li><a href="#org3e0b773">consult</a></li>
+<li><a href="#org43bb475">nix mode</a></li>
+<li><a href="#org52c6b40">treemacs</a></li>
+<li><a href="#orgf700a26">javascript stuff</a></li>
+<li><a href="#orge0b744d">start page</a></li>
+<li><a href="#org89903c7">dashboard</a></li>
+<li><a href="#org02f2993">perspective</a></li>
+<li><a href="#org00a0cef">miscellaneous settings</a></li>
+<li><a href="#orgaa41bf4">deft</a></li>
+<li><a href="#org5b0fdb6">popper.el</a></li>
+<li><a href="#orga063bd0">coding stuff</a>
 <ul>
-<li><a href="#org5b586ca">59.1. html/css/js</a></li>
-<li><a href="#org63420d0">59.2. emacs-lisp-mode</a></li>
+<li><a href="#orgdad5793">html/css/js</a></li>
+<li><a href="#orgf478bf1">emacs-lisp-mode</a></li>
 </ul>
 </li>
-<li><a href="#org2f70b02">60. spacious padding</a></li>
-<li><a href="#org6e3246c">61. org-evil</a></li>
-<li><a href="#org6f07481">62. yuck-mode</a></li>
-<li><a href="#org256a48d">63. eat</a></li>
-<li><a href="#orge0902da">64. sudo-edit</a></li>
-<li><a href="#org7c2e21a">65. ledger mode</a></li>
-<li><a href="#orgc0adbd0">66. presentation mode</a></li>
-<li><a href="#orgf050324">67. rust</a></li>
-<li><a href="#org8c8a763">68. fzf</a></li>
-<li><a href="#orgb703a08">69. gptel</a></li>
-<li><a href="#orgad24503">70. helper functions for website</a></li>
+<li><a href="#org6e1d702">spacious padding</a></li>
+<li><a href="#orgdc6fe0c">org-evil</a></li>
+<li><a href="#orgf3204d6">yuck-mode</a></li>
+<li><a href="#org86fa7e4">eat</a></li>
+<li><a href="#org39bb3f6">sudo-edit</a></li>
+<li><a href="#orge45f3b6">ledger mode</a></li>
+<li><a href="#orgd9587e9">presentation mode</a></li>
+<li><a href="#orge71872a">rust</a></li>
+<li><a href="#org21d0159">fzf</a></li>
+<li><a href="#org3e95d66">gptel</a></li>
+<li><a href="#org9dc97e0">helper functions for website</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-orgbd09d52" class="outline-2">
-<h2 id="orgbd09d52"><span class="section-number-2">1.</span> straight.el</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orga2beee7" class="outline-2">
+<h2 id="orga2beee7">straight.el</h2>
+<div class="outline-text-2" id="text-orga2beee7">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  (<span style="font-weight: bold;">defvar</span> <span style="font-weight: bold; font-style: italic;">bootstrap-version</span>)
   (<span style="font-weight: bold;">let</span> ((bootstrap-file
@@ -168,9 +168,9 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgeedfb65" class="outline-2">
-<h2 id="orgeedfb65"><span class="section-number-2">2.</span> general configuration</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org7aa506c" class="outline-2">
+<h2 id="org7aa506c">general configuration</h2>
+<div class="outline-text-2" id="text-org7aa506c">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(server-start)
 (winner-mode 1)
@@ -381,9 +381,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgfc6190d" class="outline-2">
-<h2 id="orgfc6190d"><span class="section-number-2">3.</span> important programs to load first</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org36066d0" class="outline-2">
+<h2 id="org36066d0">important programs to load first</h2>
+<div class="outline-text-2" id="text-org36066d0">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
       (tool-bar-mode -1)
@@ -502,9 +502,9 @@
 </div>
 
 
-<div id="outline-container-orga37de1b" class="outline-2">
-<h2 id="orga37de1b"><span class="section-number-2">4.</span> garbage collections</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgde8eca5" class="outline-2">
+<h2 id="orgde8eca5">garbage collections</h2>
+<div class="outline-text-2" id="text-orgde8eca5">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> gcmh
   <span style="font-weight: bold;">:diminish</span> gcmh-mode
@@ -522,9 +522,9 @@
 </div>
 
 
-<div id="outline-container-orgb8c8138" class="outline-2">
-<h2 id="orgb8c8138"><span class="section-number-2">5.</span> registers</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orga2e9237" class="outline-2">
+<h2 id="orga2e9237">registers</h2>
+<div class="outline-text-2" id="text-orga2e9237">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> register-preview-delay 0)<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">show registers asap</span>
 (<span style="font-weight: bold;">setq</span> org-directory (concat <span style="font-style: italic;">"/home/lik/Documents/"</span> <span style="font-style: italic;">"orgfiles/"</span>))
@@ -535,9 +535,9 @@
 </div>
 </div>
 
-<div id="outline-container-org6ce48d0" class="outline-2">
-<h2 id="org6ce48d0"><span class="section-number-2">6.</span> paths</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-orgc1fea89" class="outline-2">
+<h2 id="orgc1fea89">paths</h2>
+<div class="outline-text-2" id="text-orgc1fea89">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> browse-url-firefox-program <span style="font-style: italic;">"/run/current-system/sw/bin/firefox"</span>)
 (<span style="font-weight: bold;">setq</span> browse-url-chrome-program <span style="font-style: italic;">"/run/current-system/sw/bin/chromium"</span>)
@@ -547,9 +547,9 @@
 </div>
 
 
-<div id="outline-container-orga37433f" class="outline-2">
-<h2 id="orga37433f"><span class="section-number-2">7.</span> general.el (main keybindings set here)</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-org95b203a" class="outline-2">
+<h2 id="org95b203a">general.el (main keybindings set here)</h2>
+<div class="outline-text-2" id="text-org95b203a">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">lik/rg</span> ()
@@ -664,9 +664,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgb5f0c25" class="outline-3">
-<h3 id="orgb5f0c25"><span class="section-number-3">7.1.</span> preamble</h3>
-<div class="outline-text-3" id="text-7-1">
+<div id="outline-container-orgee7d5f2" class="outline-3">
+<h3 id="orgee7d5f2">preamble</h3>
+<div class="outline-text-3" id="text-orgee7d5f2">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (general-define-key
@@ -692,9 +692,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgc5d8b1a" class="outline-3">
-<h3 id="orgc5d8b1a"><span class="section-number-3">7.2.</span> applications</h3>
-<div class="outline-text-3" id="text-7-2">
+<div id="outline-container-org707bd4a" class="outline-3">
+<h3 id="org707bd4a">applications</h3>
+<div class="outline-text-3" id="text-org707bd4a">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">applications</span>
@@ -720,9 +720,9 @@
 </div>
 
 
-<div id="outline-container-orgd8727de" class="outline-3">
-<h3 id="orgd8727de"><span class="section-number-3">7.3.</span> buffers</h3>
-<div class="outline-text-3" id="text-7-3">
+<div id="outline-container-org0a6248e" class="outline-3">
+<h3 id="org0a6248e">buffers</h3>
+<div class="outline-text-3" id="text-org0a6248e">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">applications</span>
 
@@ -738,9 +738,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd5d7dff" class="outline-3">
-<h3 id="orgd5d7dff"><span class="section-number-3">7.4.</span> files</h3>
-<div class="outline-text-3" id="text-7-4">
+<div id="outline-container-org5f4e733" class="outline-3">
+<h3 id="org5f4e733">files</h3>
+<div class="outline-text-3" id="text-org5f4e733">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">files</span>
 <span style="font-style: italic;">"f"</span> '(nil <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"files"</span>)
@@ -756,9 +756,9 @@
 </div>
 </div>
 
-<div id="outline-container-org9564310" class="outline-3">
-<h3 id="org9564310"><span class="section-number-3">7.5.</span> my files</h3>
-<div class="outline-text-3" id="text-7-5">
+<div id="outline-container-org923841c" class="outline-3">
+<h3 id="org923841c">my files</h3>
+<div class="outline-text-3" id="text-org923841c">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">   <span style="font-style: italic;">"l"</span> '(nil <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"likith"</span>)
    <span style="font-style: italic;">"lc"</span> '((<span style="font-weight: bold;">lambda</span>() (<span style="font-weight: bold;">interactive</span>) (find-file <span style="font-style: italic;">"/home/lik/.dotfiles/config.org"</span>)) <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"emacs config"</span>)
@@ -801,9 +801,9 @@
 </div>
 </div>
 
-<div id="outline-container-org54d089d" class="outline-3">
-<h3 id="org54d089d"><span class="section-number-3">7.6.</span> help/emacs</h3>
-<div class="outline-text-3" id="text-7-6">
+<div id="outline-container-orgd68e67e" class="outline-3">
+<h3 id="orgd68e67e">help/emacs</h3>
+<div class="outline-text-3" id="text-orgd68e67e">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Help/emacs</span>
 <span style="font-style: italic;">"h"</span> '(nil <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"help/emacs"</span>)
@@ -831,9 +831,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgba93fc4" class="outline-3">
-<h3 id="orgba93fc4"><span class="section-number-3">7.7.</span> text</h3>
-<div class="outline-text-3" id="text-7-7">
+<div id="outline-container-org124b56f" class="outline-3">
+<h3 id="org124b56f">text</h3>
+<div class="outline-text-3" id="text-org124b56f">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-style: italic;">"x"</span> '(nil <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"text"</span>)
 <span style="font-style: italic;">"xC"</span> '(lik/copy-whole-buffer-to-clipboard <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"copy whole buffer to clipboard"</span>)
@@ -847,9 +847,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgce797c3" class="outline-3">
-<h3 id="orgce797c3"><span class="section-number-3">7.8.</span> toggles/visuals</h3>
-<div class="outline-text-3" id="text-7-8">
+<div id="outline-container-org5e88143" class="outline-3">
+<h3 id="org5e88143">toggles/visuals</h3>
+<div class="outline-text-3" id="text-org5e88143">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Toggles</span>
 <span style="font-style: italic;">"t"</span> '(nil <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"toggles"</span>)
@@ -868,9 +868,9 @@
 </div>
 </div>
 
-<div id="outline-container-org329ecdb" class="outline-3">
-<h3 id="org329ecdb"><span class="section-number-3">7.9.</span> windows</h3>
-<div class="outline-text-3" id="text-7-9">
+<div id="outline-container-orga57aaab" class="outline-3">
+<h3 id="orga57aaab">windows</h3>
+<div class="outline-text-3" id="text-orga57aaab">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Windows</span>
 <span style="font-style: italic;">"w"</span> '(nil <span style="font-weight: bold;">:which-key</span> <span style="font-style: italic;">"window"</span>)
@@ -892,9 +892,9 @@
 </div>
 </div>
 
-<div id="outline-container-org7c8d99d" class="outline-3">
-<h3 id="org7c8d99d"><span class="section-number-3">7.10.</span> all-mode keybindings</h3>
-<div class="outline-text-3" id="text-7-10">
+<div id="outline-container-org014765b" class="outline-3">
+<h3 id="org014765b">all-mode keybindings</h3>
+<div class="outline-text-3" id="text-org014765b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">all-mode keymaps</span>
 (general-def
@@ -943,9 +943,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgcdb8296" class="outline-3">
-<h3 id="orgcdb8296"><span class="section-number-3">7.11.</span> non-insert mode keybindings (normal, visual, motion)</h3>
-<div class="outline-text-3" id="text-7-11">
+<div id="outline-container-orgbe60139" class="outline-3">
+<h3 id="orgbe60139">non-insert mode keybindings (normal, visual, motion)</h3>
+<div class="outline-text-3" id="text-orgbe60139">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">non-insert mode keymaps</span>
 (general-def
@@ -980,9 +980,9 @@
 </div>
 </div>
 
-<div id="outline-container-org59948cb" class="outline-3">
-<h3 id="org59948cb"><span class="section-number-3">7.12.</span> insert mode keymaps</h3>
-<div class="outline-text-3" id="text-7-12">
+<div id="outline-container-org81ce1ff" class="outline-3">
+<h3 id="org81ce1ff">insert mode keymaps</h3>
+<div class="outline-text-3" id="text-org81ce1ff">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">insert keymaps</span>
 <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">many of these are emulating standard emacs bindings in evil insert mode, such as  C-a, or C-e</span>
@@ -1000,9 +1000,9 @@
 </div>
 </div>
 
-<div id="outline-container-org263ebe8" class="outline-3">
-<h3 id="org263ebe8"><span class="section-number-3">7.13.</span> emacs mode keymaps</h3>
-<div class="outline-text-3" id="text-7-13">
+<div id="outline-container-orga224641" class="outline-3">
+<h3 id="orga224641">emacs mode keymaps</h3>
+<div class="outline-text-3" id="text-orga224641">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(general-def
   <span style="font-weight: bold;">:keymaps</span> 'emacs
@@ -1014,9 +1014,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgff30e28" class="outline-2">
-<h2 id="orgff30e28"><span class="section-number-2">8.</span> ivy</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-orgf4dfa44" class="outline-2">
+<h2 id="orgf4dfa44">ivy</h2>
+<div class="outline-text-2" id="text-orgf4dfa44">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span style="font-weight: bold;">use-package</span> ivy
@@ -1072,9 +1072,9 @@
 </div>
 
 
-<div id="outline-container-org0454e47" class="outline-2">
-<h2 id="org0454e47"><span class="section-number-2">9.</span> all the icons and all the icons dired</h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-org584666d" class="outline-2">
+<h2 id="org584666d">all the icons and all the icons dired</h2>
+<div class="outline-text-2" id="text-org584666d">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 </pre>
@@ -1083,9 +1083,9 @@
 </div>
 
 
-<div id="outline-container-org354c959" class="outline-2">
-<h2 id="org354c959"><span class="section-number-2">10.</span> doom modeline and themes</h2>
-<div class="outline-text-2" id="text-10">
+<div id="outline-container-org2d7d07b" class="outline-2">
+<h2 id="org2d7d07b">doom modeline and themes</h2>
+<div class="outline-text-2" id="text-org2d7d07b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  (<span style="font-weight: bold;">setq</span> display-time-default-load-average nil)
   (line-number-mode)
@@ -1120,9 +1120,9 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orge2827bd" class="outline-2">
-<h2 id="orge2827bd"><span class="section-number-2">11.</span> default emacs frame features</h2>
-<div class="outline-text-2" id="text-11">
+<div id="outline-container-org4338047" class="outline-2">
+<h2 id="org4338047">default emacs frame features</h2>
+<div class="outline-text-2" id="text-org4338047">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> frame-inhibit-implied-resize t)
 (add-to-list 'default-frame-alist '(tool-bar-lines . 0))
@@ -1134,9 +1134,9 @@
 </div>
 </div>
 
-<div id="outline-container-org26de5fd" class="outline-2">
-<h2 id="org26de5fd"><span class="section-number-2">12.</span> themes and icons</h2>
-<div class="outline-text-2" id="text-12">
+<div id="outline-container-org1c31636" class="outline-2">
+<h2 id="org1c31636">themes and icons</h2>
+<div class="outline-text-2" id="text-org1c31636">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
     (<span style="font-weight: bold;">use-package</span> all-the-icons
@@ -1206,9 +1206,9 @@
 </div>
 </div>
 
-<div id="outline-container-org0008e25" class="outline-2">
-<h2 id="org0008e25"><span class="section-number-2">13.</span> line numbers, fringe, hl-line</h2>
-<div class="outline-text-2" id="text-13">
+<div id="outline-container-org99344d3" class="outline-2">
+<h2 id="org99344d3">line numbers, fringe, hl-line</h2>
+<div class="outline-text-2" id="text-org99344d3">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq-default</span> fringes-outside-margins nil)
 (<span style="font-weight: bold;">setq-default</span> indicate-buffer-boundaries nil) <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">otherwise shows a corner icon on the edge</span>
@@ -1223,9 +1223,9 @@
 </div>
 
 
-<div id="outline-container-org4bf239b" class="outline-2">
-<h2 id="org4bf239b"><span class="section-number-2">14.</span> writeroom + visual-fill-column</h2>
-<div class="outline-text-2" id="text-14">
+<div id="outline-container-orge7b6ad6" class="outline-2">
+<h2 id="orge7b6ad6">writeroom + visual-fill-column</h2>
+<div class="outline-text-2" id="text-orge7b6ad6">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span style="font-weight: bold;">use-package</span> visual-fill-column
@@ -1251,9 +1251,9 @@
 </div>
 
 
-<div id="outline-container-org37beed5" class="outline-2">
-<h2 id="org37beed5"><span class="section-number-2">15.</span> which-key</h2>
-<div class="outline-text-2" id="text-15">
+<div id="outline-container-org21120bb" class="outline-2">
+<h2 id="org21120bb">which-key</h2>
+<div class="outline-text-2" id="text-org21120bb">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> which-key
   <span style="font-weight: bold;">:init</span>
@@ -1277,9 +1277,9 @@
 
 
 
-<div id="outline-container-orgf101f0f" class="outline-2">
-<h2 id="orgf101f0f"><span class="section-number-2">16.</span> counsel</h2>
-<div class="outline-text-2" id="text-16">
+<div id="outline-container-orgb2add3f" class="outline-2">
+<h2 id="orgb2add3f">counsel</h2>
+<div class="outline-text-2" id="text-orgb2add3f">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span style="font-weight: bold;">defvar</span> <span style="font-weight: bold; font-style: italic;">lik/home</span> (concat (getenv <span style="font-style: italic;">"HOME"</span>) <span style="font-style: italic;">"/"</span>) <span style="font-style: italic;">"my home directory"</span>)
@@ -1331,9 +1331,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgf30b090" class="outline-2">
-<h2 id="orgf30b090"><span class="section-number-2">17.</span> prescient</h2>
-<div class="outline-text-2" id="text-17">
+<div id="outline-container-org7c8cef3" class="outline-2">
+<h2 id="org7c8cef3">prescient</h2>
+<div class="outline-text-2" id="text-org7c8cef3">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  (<span style="font-weight: bold;">use-package</span> prescient
   <span style="font-weight: bold;">:config</span>
@@ -1360,9 +1360,9 @@
 </div>
 </div>
 
-<div id="outline-container-org9570589" class="outline-2">
-<h2 id="org9570589"><span class="section-number-2">18.</span> smartparens</h2>
-<div class="outline-text-2" id="text-18">
+<div id="outline-container-orge32d50d" class="outline-2">
+<h2 id="orge32d50d">smartparens</h2>
+<div class="outline-text-2" id="text-orge32d50d">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> smartparens
   <span style="font-weight: bold;">:ensure</span> t
@@ -1416,9 +1416,9 @@
 </div>
 
 
-<div id="outline-container-org8eb575c" class="outline-2">
-<h2 id="org8eb575c"><span class="section-number-2">19.</span> mixed-pitch</h2>
-<div class="outline-text-2" id="text-19">
+<div id="outline-container-orgf8e4bee" class="outline-2">
+<h2 id="orgf8e4bee">mixed-pitch</h2>
+<div class="outline-text-2" id="text-orgf8e4bee">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> mixed-pitch
   <span style="font-weight: bold;">:defer</span> t
@@ -1431,9 +1431,9 @@
 </div>
 </div>
 
-<div id="outline-container-org997e9df" class="outline-2">
-<h2 id="org997e9df"><span class="section-number-2">20.</span> evil-anzu (search and replace)</h2>
-<div class="outline-text-2" id="text-20">
+<div id="outline-container-orgf57dfac" class="outline-2">
+<h2 id="orgf57dfac">evil-anzu (search and replace)</h2>
+<div class="outline-text-2" id="text-orgf57dfac">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> evil-anzu <span style="font-weight: bold;">:defer</span> t)
 </pre>
@@ -1442,9 +1442,9 @@
 </div>
 
 
-<div id="outline-container-org67058b9" class="outline-2">
-<h2 id="org67058b9"><span class="section-number-2">21.</span> avy</h2>
-<div class="outline-text-2" id="text-21">
+<div id="outline-container-orgaf25c5f" class="outline-2">
+<h2 id="orgaf25c5f">avy</h2>
+<div class="outline-text-2" id="text-orgaf25c5f">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> avy
   <span style="font-weight: bold;">:defer</span> t
@@ -1455,9 +1455,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgf4657bb" class="outline-2">
-<h2 id="orgf4657bb"><span class="section-number-2">22.</span> clipboard (simpleclip)</h2>
-<div class="outline-text-2" id="text-22">
+<div id="outline-container-org56d84a4" class="outline-2">
+<h2 id="org56d84a4">clipboard (simpleclip)</h2>
+<div class="outline-text-2" id="text-org56d84a4">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> simpleclip <span style="font-weight: bold;">:config</span> (simpleclip-mode 1))
 <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">allows pasting in minibuffer with M-v</span>
@@ -1469,9 +1469,9 @@
 </div>
 </div>
 
-<div id="outline-container-org14ff46c" class="outline-2">
-<h2 id="org14ff46c"><span class="section-number-2">23.</span> undo/redo (undofu)</h2>
-<div class="outline-text-2" id="text-23">
+<div id="outline-container-org3fbfbdc" class="outline-2">
+<h2 id="org3fbfbdc">undo/redo (undofu)</h2>
+<div class="outline-text-2" id="text-org3fbfbdc">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> undo-fu)
 </pre>
@@ -1479,9 +1479,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgf6dd83f" class="outline-2">
-<h2 id="orgf6dd83f"><span class="section-number-2">24.</span> super-save</h2>
-<div class="outline-text-2" id="text-24">
+<div id="outline-container-org72bb907" class="outline-2">
+<h2 id="org72bb907">super-save</h2>
+<div class="outline-text-2" id="text-org72bb907">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
   (<span style="font-weight: bold;">use-package</span> super-save
@@ -1505,9 +1505,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgec1bbee" class="outline-2">
-<h2 id="orgec1bbee"><span class="section-number-2">25.</span> saveplace</h2>
-<div class="outline-text-2" id="text-25">
+<div id="outline-container-org1e0e5fd" class="outline-2">
+<h2 id="org1e0e5fd">saveplace</h2>
+<div class="outline-text-2" id="text-org1e0e5fd">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> saveplace
   <span style="font-weight: bold;">:init</span> (<span style="font-weight: bold;">setq</span> save-place-limit 100)
@@ -1519,9 +1519,9 @@
 </div>
 
 
-<div id="outline-container-org94c9bb2" class="outline-2">
-<h2 id="org94c9bb2"><span class="section-number-2">26.</span> yasnippet</h2>
-<div class="outline-text-2" id="text-26">
+<div id="outline-container-org9d226a5" class="outline-2">
+<h2 id="org9d226a5">yasnippet</h2>
+<div class="outline-text-2" id="text-org9d226a5">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  (<span style="font-weight: bold;">defvar</span> <span style="font-weight: bold; font-style: italic;">lik/emacs-stuff</span> <span style="font-style: italic;">"/home/lik/Documents/"</span> <span style="font-style: italic;">"directory where personal emacs files are kept"</span>)
 
@@ -1540,9 +1540,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgb763e35" class="outline-2">
-<h2 id="orgb763e35"><span class="section-number-2">27.</span> helpful</h2>
-<div class="outline-text-2" id="text-27">
+<div id="outline-container-org03e39dd" class="outline-2">
+<h2 id="org03e39dd">helpful</h2>
+<div class="outline-text-2" id="text-org03e39dd">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> helpful
   <span style="font-weight: bold;">:custom</span>
@@ -1558,9 +1558,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd6dbf99" class="outline-2">
-<h2 id="orgd6dbf99"><span class="section-number-2">28.</span> rainbow-delimiters</h2>
-<div class="outline-text-2" id="text-28">
+<div id="outline-container-org14b2a21" class="outline-2">
+<h2 id="org14b2a21">rainbow-delimiters</h2>
+<div class="outline-text-2" id="text-org14b2a21">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  (<span style="font-weight: bold;">use-package</span> rainbow-delimiters
     <span style="font-weight: bold;">:hook</span> (prog-mode . rainbow-delimiters-mode))
@@ -1576,9 +1576,9 @@
 </div>
 
 
-<div id="outline-container-orgad6b989" class="outline-2">
-<h2 id="orgad6b989"><span class="section-number-2">29.</span> dired and dired-single</h2>
-<div class="outline-text-2" id="text-29">
+<div id="outline-container-orgb7779dc" class="outline-2">
+<h2 id="orgb7779dc">dired and dired-single</h2>
+<div class="outline-text-2" id="text-orgb7779dc">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> dired
   <span style="font-weight: bold;">:straight</span> nil
@@ -1605,9 +1605,9 @@
 </div>
 </div>
 
-<div id="outline-container-org7132abd" class="outline-2">
-<h2 id="org7132abd"><span class="section-number-2">30.</span> lsp-mode</h2>
-<div class="outline-text-2" id="text-30">
+<div id="outline-container-org723eb4f" class="outline-2">
+<h2 id="org723eb4f">lsp-mode</h2>
+<div class="outline-text-2" id="text-org723eb4f">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
   (<span style="font-weight: bold;">setq</span> gc-cons-threshold 100000000)
@@ -1660,9 +1660,9 @@
 </div>
 </div>
 
-<div id="outline-container-org069bc6c" class="outline-2">
-<h2 id="org069bc6c"><span class="section-number-2">31.</span> evil mode</h2>
-<div class="outline-text-2" id="text-31">
+<div id="outline-container-orgd65cb44" class="outline-2">
+<h2 id="orgd65cb44">evil mode</h2>
+<div class="outline-text-2" id="text-orgd65cb44">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span style="font-weight: bold;">use-package</span> evil
@@ -1725,9 +1725,9 @@
 </div>
 
 
-<div id="outline-container-org72643c4" class="outline-2">
-<h2 id="org72643c4"><span class="section-number-2">32.</span> magit</h2>
-<div class="outline-text-2" id="text-32">
+<div id="outline-container-org24fd191" class="outline-2">
+<h2 id="org24fd191">magit</h2>
+<div class="outline-text-2" id="text-org24fd191">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> magit
 
@@ -1741,9 +1741,9 @@
 </div>
 </div>
 
-<div id="outline-container-org6e5ad90" class="outline-2">
-<h2 id="org6e5ad90"><span class="section-number-2">33.</span> forge</h2>
-<div class="outline-text-2" id="text-33">
+<div id="outline-container-org0c51e7b" class="outline-2">
+<h2 id="org0c51e7b">forge</h2>
+<div class="outline-text-2" id="text-org0c51e7b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> forge
   <span style="font-weight: bold;">:after</span> magit)
@@ -1753,9 +1753,9 @@
 </div>
 
 
-<div id="outline-container-org0e176ba" class="outline-2">
-<h2 id="org0e176ba"><span class="section-number-2">34.</span> evil nerd commenter</h2>
-<div class="outline-text-2" id="text-34">
+<div id="outline-container-org3fea908" class="outline-2">
+<h2 id="org3fea908">evil nerd commenter</h2>
+<div class="outline-text-2" id="text-org3fea908">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> evil-nerd-commenter
   <span style="font-weight: bold;">:bind</span> (<span style="font-style: italic;">"M-/"</span> . evilnc-comment-or-uncomment-lines))
@@ -1765,9 +1765,9 @@
 </div>
 
 
-<div id="outline-container-orgdc27c72" class="outline-2">
-<h2 id="orgdc27c72"><span class="section-number-2">35.</span> projectile</h2>
-<div class="outline-text-2" id="text-35">
+<div id="outline-container-org36ae14d" class="outline-2">
+<h2 id="org36ae14d">projectile</h2>
+<div class="outline-text-2" id="text-org36ae14d">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> projectile
   <span style="font-weight: bold;">:diminish</span> projectile-mode
@@ -1790,9 +1790,9 @@
 </div>
 </div>
 
-<div id="outline-container-org1322730" class="outline-2">
-<h2 id="org1322730"><span class="section-number-2">36.</span> dap mode</h2>
-<div class="outline-text-2" id="text-36">
+<div id="outline-container-orge3a980b" class="outline-2">
+<h2 id="orge3a980b">dap mode</h2>
+<div class="outline-text-2" id="text-orge3a980b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
       (<span style="font-weight: bold;">use-package</span> hydra <span style="font-weight: bold;">:defer</span> t)
@@ -1938,9 +1938,9 @@
 </div>
 </div>
 
-<div id="outline-container-org74432b6" class="outline-2">
-<h2 id="org74432b6"><span class="section-number-2">37.</span> corfu (+ extensions)</h2>
-<div class="outline-text-2" id="text-37">
+<div id="outline-container-orgf815448" class="outline-2">
+<h2 id="orgf815448">corfu (+ extensions)</h2>
+<div class="outline-text-2" id="text-orgf815448">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  (<span style="font-weight: bold;">use-package</span> corfu
     <span style="font-weight: bold;">:init</span>
@@ -2006,9 +2006,9 @@
 </div>
 
 
-<div id="outline-container-org634279d" class="outline-2">
-<h2 id="org634279d"><span class="section-number-2">38.</span> spellcheck (flyspell)</h2>
-<div class="outline-text-2" id="text-38">
+<div id="outline-container-org6916452" class="outline-2">
+<h2 id="org6916452">spellcheck (flyspell)</h2>
+<div class="outline-text-2" id="text-org6916452">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">"Enable Flyspell mode, which highlights all misspelled words. "</span>
 (<span style="font-weight: bold;">use-package</span> flyspell
@@ -2047,9 +2047,9 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org3244817" class="outline-2">
-<h2 id="org3244817"><span class="section-number-2">39.</span> eglot</h2>
-<div class="outline-text-2" id="text-39">
+<div id="outline-container-orgdc6fd79" class="outline-2">
+<h2 id="orgdc6fd79">eglot</h2>
+<div class="outline-text-2" id="text-orgdc6fd79">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
   (<span style="font-weight: bold;">use-package</span> eglot
@@ -2076,9 +2076,9 @@
 </div>
 
 
-<div id="outline-container-orga66384f" class="outline-2">
-<h2 id="orga66384f"><span class="section-number-2">40.</span> python stuff</h2>
-<div class="outline-text-2" id="text-40">
+<div id="outline-container-org026e264" class="outline-2">
+<h2 id="org026e264">python stuff</h2>
+<div class="outline-text-2" id="text-org026e264">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(use-package python</span>
@@ -2107,9 +2107,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgd8d93f0" class="outline-2">
-<h2 id="orgd8d93f0"><span class="section-number-2">41.</span> typescript</h2>
-<div class="outline-text-2" id="text-41">
+<div id="outline-container-orgecaefbf" class="outline-2">
+<h2 id="orgecaefbf">typescript</h2>
+<div class="outline-text-2" id="text-orgecaefbf">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;  </span><span style="font-weight: bold; font-style: italic;">(use-package typescript-mode</span>
 <span style="font-weight: bold; font-style: italic;">;    </span><span style="font-weight: bold; font-style: italic;">:mode "\\.ts\\'"</span>
@@ -2121,9 +2121,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgfa113be" class="outline-2">
-<h2 id="orgfa113be"><span class="section-number-2">42.</span> company</h2>
-<div class="outline-text-2" id="text-42">
+<div id="outline-container-org95acd95" class="outline-2">
+<h2 id="org95acd95">company</h2>
+<div class="outline-text-2" id="text-org95acd95">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  (<span style="font-weight: bold;">use-package</span> company
     <span style="font-weight: bold;">:after</span> lsp-mode
@@ -2150,9 +2150,9 @@
 </div>
 
 
-<div id="outline-container-org7a02eb5" class="outline-2">
-<h2 id="org7a02eb5"><span class="section-number-2">43.</span> terminal stuff</h2>
-<div class="outline-text-2" id="text-43">
+<div id="outline-container-orge244fee" class="outline-2">
+<h2 id="orge244fee">terminal stuff</h2>
+<div class="outline-text-2" id="text-orge244fee">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> term
   <span style="font-weight: bold;">:commands</span> term
@@ -2195,9 +2195,9 @@
 </div>
 </div>
 
-<div id="outline-container-orga7fc8f0" class="outline-2">
-<h2 id="orga7fc8f0"><span class="section-number-2">44.</span> org mode stuff</h2>
-<div class="outline-text-2" id="text-44">
+<div id="outline-container-orgca4d2bf" class="outline-2">
+<h2 id="orgca4d2bf">org mode stuff</h2>
+<div class="outline-text-2" id="text-orgca4d2bf">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
       (<span style="font-weight: bold;">use-package</span> org-super-agenda
@@ -2295,13 +2295,13 @@
 </div>
 
 
-<div id="outline-container-orgbc8bb13" class="outline-2">
-<h2 id="orgbc8bb13"><span class="section-number-2">45.</span> tags, todos, priorities</h2>
-<div class="outline-text-2" id="text-45">
+<div id="outline-container-orgcbb9b46" class="outline-2">
+<h2 id="orgcbb9b46">tags, todos, priorities</h2>
+<div class="outline-text-2" id="text-orgcbb9b46">
 </div>
-<div id="outline-container-orgbf9965d" class="outline-3">
-<h3 id="orgbf9965d"><span class="section-number-3">45.1.</span> tags</h3>
-<div class="outline-text-3" id="text-45-1">
+<div id="outline-container-org16beaaf" class="outline-3">
+<h3 id="org16beaaf">tags</h3>
+<div class="outline-text-3" id="text-org16beaaf">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-tags-column -1)
 </pre>
@@ -2309,9 +2309,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgcb48b92" class="outline-3">
-<h3 id="orgcb48b92"><span class="section-number-3">45.2.</span> todo/workflow states</h3>
-<div class="outline-text-3" id="text-45-2">
+<div id="outline-container-orgb572156" class="outline-3">
+<h3 id="orgb572156">todo/workflow states</h3>
+<div class="outline-text-3" id="text-orgb572156">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">    (<span style="font-weight: bold;">setq</span> org-todo-keywords
         '((sequence <span style="font-style: italic;">"BACKLOG(b)"</span> <span style="font-style: italic;">"TODO(t)"</span> <span style="font-style: italic;">"IN PROGRESS(p)"</span> <span style="font-style: italic;">"WAITING(w)"</span> <span style="font-style: italic;">"|"</span> <span style="font-style: italic;">"DONE(d!)"</span>)
@@ -2337,9 +2337,9 @@
 </div>
 </div>
 
-<div id="outline-container-org7e7b64a" class="outline-3">
-<h3 id="org7e7b64a"><span class="section-number-3">45.3.</span> priorities</h3>
-<div class="outline-text-3" id="text-45-3">
+<div id="outline-container-org9029155" class="outline-3">
+<h3 id="org9029155">priorities</h3>
+<div class="outline-text-3" id="text-org9029155">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-lowest-priority ?F) <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">gives us priorities A through F</span>
 (<span style="font-weight: bold;">setq</span> org-default-priority ?E)
@@ -2356,9 +2356,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgba726d8" class="outline-3">
-<h3 id="orgba726d8"><span class="section-number-3">45.4.</span> org babel</h3>
-<div class="outline-text-3" id="text-45-4">
+<div id="outline-container-org44f453b" class="outline-3">
+<h3 id="org44f453b">org babel</h3>
+<div class="outline-text-3" id="text-org44f453b">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  (org-babel-do-load-languages
    'org-babel-load-languages
@@ -2395,13 +2395,13 @@
 </div>
 </div>
 
-<div id="outline-container-orga020651" class="outline-3">
-<h3 id="orga020651"><span class="section-number-3">45.5.</span> org mode tagging stuff</h3>
+<div id="outline-container-orgab8c724" class="outline-3">
+<h3 id="orgab8c724">org mode tagging stuff</h3>
 </div>
 
-<div id="outline-container-org3f40dfd" class="outline-3">
-<h3 id="org3f40dfd"><span class="section-number-3">45.6.</span> workflow states</h3>
-<div class="outline-text-3" id="text-45-6">
+<div id="outline-container-org0d064f1" class="outline-3">
+<h3 id="org0d064f1">workflow states</h3>
+<div class="outline-text-3" id="text-org0d064f1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 
@@ -2414,9 +2414,9 @@
 </div>
 
 
-<div id="outline-container-org88638aa" class="outline-4">
-<h4 id="org88638aa"><span class="section-number-4">45.6.1.</span> tags</h4>
-<div class="outline-text-4" id="text-45-6-1">
+<div id="outline-container-org3a34d52" class="outline-4">
+<h4 id="org3a34d52">tags</h4>
+<div class="outline-text-4" id="text-org3a34d52">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span style="font-weight: bold;">setq</span> org-tag-alist
@@ -2442,9 +2442,9 @@
 </div>
 
 
-<div id="outline-container-org7d5dc30" class="outline-3">
-<h3 id="org7d5dc30"><span class="section-number-3">45.7.</span> org mode agenda views</h3>
-<div class="outline-text-3" id="text-45-7">
+<div id="outline-container-orgf646d93" class="outline-3">
+<h3 id="orgf646d93">org mode agenda views</h3>
+<div class="outline-text-3" id="text-orgf646d93">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">    (<span style="font-weight: bold;">setq</span> org-time-stamp-custom-formats '(<span style="font-style: italic;">"&lt;%A, %B %d, %Y"</span> . <span style="font-style: italic;">"&lt;%m/%d.%y %a %I:%M %p&gt;"</span>))
     (<span style="font-weight: bold;">setq</span> org-agenda-restore-windows-after-quit t)
@@ -2601,9 +2601,9 @@
 
 
 
-<div id="outline-container-org8adb122" class="outline-3">
-<h3 id="org8adb122"><span class="section-number-3">45.8.</span> other org mode stuff</h3>
-<div class="outline-text-3" id="text-45-8">
+<div id="outline-container-org13add05" class="outline-3">
+<h3 id="org13add05">other org mode stuff</h3>
+<div class="outline-text-3" id="text-org13add05">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
    (<span style="font-weight: bold;">use-package</span> org-appear
@@ -2719,9 +2719,9 @@
 </div>
 </div>
 
-<div id="outline-container-org6a7d2d3" class="outline-3">
-<h3 id="org6a7d2d3"><span class="section-number-3">45.9.</span> org roam</h3>
-<div class="outline-text-3" id="text-45-9">
+<div id="outline-container-org8c5533e" class="outline-3">
+<h3 id="org8c5533e">org roam</h3>
+<div class="outline-text-3" id="text-org8c5533e">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span style="font-weight: bold;">use-package</span> emacsql)
@@ -2780,9 +2780,9 @@ marginalia
 </div>
 </div>
 
-<div id="outline-container-org91f4ea6" class="outline-3">
-<h3 id="org91f4ea6"><span class="section-number-3">45.10.</span> org-edna</h3>
-<div class="outline-text-3" id="text-45-10">
+<div id="outline-container-org062e1c6" class="outline-3">
+<h3 id="org062e1c6">org-edna</h3>
+<div class="outline-text-3" id="text-org062e1c6">
 <p>
 for task dependencies
 </p>
@@ -2795,9 +2795,9 @@ for task dependencies
 </div>
 
 
-<div id="outline-container-org94f3507" class="outline-3">
-<h3 id="org94f3507"><span class="section-number-3">45.11.</span> org-fragtog</h3>
-<div class="outline-text-3" id="text-45-11">
+<div id="outline-container-orgb7dfb04" class="outline-3">
+<h3 id="orgb7dfb04">org-fragtog</h3>
+<div class="outline-text-3" id="text-orgb7dfb04">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> org-fragtog
   <span style="font-weight: bold;">:hook</span> (org-mdoe . org-fragtog-mode)
@@ -2810,9 +2810,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-org8067a9d" class="outline-3">
-<h3 id="org8067a9d"><span class="section-number-3">45.12.</span> org-tree-slide</h3>
-<div class="outline-text-3" id="text-45-12">
+<div id="outline-container-org199b414" class="outline-3">
+<h3 id="org199b414">org-tree-slide</h3>
+<div class="outline-text-3" id="text-org199b414">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> org-tree-slide
   <span style="font-weight: bold;">:defer</span> t
@@ -2825,9 +2825,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-org868fe1b" class="outline-3">
-<h3 id="org868fe1b"><span class="section-number-3">45.13.</span> org-download</h3>
-<div class="outline-text-3" id="text-45-13">
+<div id="outline-container-org2e1a398" class="outline-3">
+<h3 id="org2e1a398">org-download</h3>
+<div class="outline-text-3" id="text-org2e1a398">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">lik/emacs-clipboard-to-system-clipboard</span> ()
   <span style="font-style: italic;">"set system clipboard to contents of emacs kill ring"</span>
@@ -2849,9 +2849,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-orgf1f5368" class="outline-3">
-<h3 id="orgf1f5368"><span class="section-number-3">45.14.</span> valign</h3>
-<div class="outline-text-3" id="text-45-14">
+<div id="outline-container-org5c0b1de" class="outline-3">
+<h3 id="org5c0b1de">valign</h3>
+<div class="outline-text-3" id="text-org5c0b1de">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> valign <span style="font-weight: bold;">:defer</span> t)
 </pre>
@@ -2860,9 +2860,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-org1885207" class="outline-2">
-<h2 id="org1885207"><span class="section-number-2">46.</span> org mode keybindings</h2>
-<div class="outline-text-2" id="text-46">
+<div id="outline-container-org3b24c01" class="outline-2">
+<h2 id="org3b24c01">org mode keybindings</h2>
+<div class="outline-text-2" id="text-org3b24c01">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 
@@ -2985,9 +2985,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-orgb314a57" class="outline-3">
-<h3 id="orgb314a57"><span class="section-number-3">46.1.</span> org mode comma leader key setup</h3>
-<div class="outline-text-3" id="text-46-1">
+<div id="outline-container-org962a649" class="outline-3">
+<h3 id="org962a649">org mode comma leader key setup</h3>
+<div class="outline-text-3" id="text-org962a649">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
           (<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">lik/org-schedule-tomorrow</span> ()
@@ -3137,9 +3137,9 @@ for task dependencies
 </div>
 
 
-<div id="outline-container-orgd6a88fa" class="outline-3">
-<h3 id="orgd6a88fa"><span class="section-number-3">46.2.</span> org exporting</h3>
-<div class="outline-text-3" id="text-46-2">
+<div id="outline-container-orgd9fc853" class="outline-3">
+<h3 id="orgd9fc853">org exporting</h3>
+<div class="outline-text-3" id="text-orgd9fc853">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(setq org-export-backends '(ascii beamer html latex md odt))</span>
 
@@ -3174,9 +3174,9 @@ for task dependencies
 </div>
 </div>
 </div>
-<div id="outline-container-orge000afe" class="outline-3">
-<h3 id="orge000afe"><span class="section-number-3">46.3.</span> latex classes</h3>
-<div class="outline-text-3" id="text-46-3">
+<div id="outline-container-org4b85fc2" class="outline-3">
+<h3 id="org4b85fc2">latex classes</h3>
+<div class="outline-text-3" id="text-org4b85fc2">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
         (<span style="font-weight: bold;">setq</span> org-latex-listings t)
@@ -3204,9 +3204,9 @@ for task dependencies
 </div>
 </div>
 </div>
-<div id="outline-container-org440760d" class="outline-3">
-<h3 id="org440760d"><span class="section-number-3">46.4.</span> misc org mode</h3>
-<div class="outline-text-3" id="text-46-4">
+<div id="outline-container-orged4e248" class="outline-3">
+<h3 id="orged4e248">misc org mode</h3>
+<div class="outline-text-3" id="text-orged4e248">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> org-clock-mode-line-total 'current) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">show only timer from current clock session in modeline</span>
 (<span style="font-weight: bold;">setq</span> org-clock-clocked-in-display 'both)
@@ -3217,9 +3217,9 @@ for task dependencies
 </div>
 </div>
 </div>
-<div id="outline-container-orgbb1a540" class="outline-2">
-<h2 id="orgbb1a540"><span class="section-number-2">47.</span> other function(s)</h2>
-<div class="outline-text-2" id="text-47">
+<div id="outline-container-org68388eb" class="outline-2">
+<h2 id="org68388eb">other function(s)</h2>
+<div class="outline-text-2" id="text-org68388eb">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">efs/read-file-as-string</span> (path)
   (<span style="font-weight: bold;">with-temp-buffer</span>
@@ -3235,9 +3235,9 @@ for task dependencies
 </div>
 
 
-<div id="outline-container-org49e8402" class="outline-2">
-<h2 id="org49e8402"><span class="section-number-2">48.</span> vertico</h2>
-<div class="outline-text-2" id="text-48">
+<div id="outline-container-org12d1e42" class="outline-2">
+<h2 id="org12d1e42">vertico</h2>
+<div class="outline-text-2" id="text-org12d1e42">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 
@@ -3386,9 +3386,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-orgd7bf6e6" class="outline-2">
-<h2 id="orgd7bf6e6"><span class="section-number-2">49.</span> consult</h2>
-<div class="outline-text-2" id="text-49">
+<div id="outline-container-org3e0b773" class="outline-2">
+<h2 id="org3e0b773">consult</h2>
+<div class="outline-text-2" id="text-org3e0b773">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  (<span style="font-weight: bold;">use-package</span> consult
   <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Replace bindings. Lazily loaded by `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">use-package</span><span style="font-weight: bold; font-style: italic;">'.</span>
@@ -3503,9 +3503,9 @@ for task dependencies
 
 
 
-<div id="outline-container-org34c74c3" class="outline-2">
-<h2 id="org34c74c3"><span class="section-number-2">50.</span> nix mode</h2>
-<div class="outline-text-2" id="text-50">
+<div id="outline-container-org43bb475" class="outline-2">
+<h2 id="org43bb475">nix mode</h2>
+<div class="outline-text-2" id="text-org43bb475">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;  </span><span style="font-weight: bold; font-style: italic;">(use-package nix-mode</span>
 <span style="font-weight: bold; font-style: italic;">;      </span><span style="font-weight: bold; font-style: italic;">:mode ("\\.nix\\'"))</span>
@@ -3526,9 +3526,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-orga26cd56" class="outline-2">
-<h2 id="orga26cd56"><span class="section-number-2">51.</span> treemacs</h2>
-<div class="outline-text-2" id="text-51">
+<div id="outline-container-org52c6b40" class="outline-2">
+<h2 id="org52c6b40">treemacs</h2>
+<div class="outline-text-2" id="text-org52c6b40">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 <span style="font-weight: bold; font-style: italic;">;   </span><span style="font-weight: bold; font-style: italic;">(use-package treemacs</span>
@@ -3651,9 +3651,9 @@ for task dependencies
 </div>
 
 
-<div id="outline-container-org4f880f8" class="outline-2">
-<h2 id="org4f880f8"><span class="section-number-2">52.</span> javascript stuff</h2>
-<div class="outline-text-2" id="text-52">
+<div id="outline-container-orgf700a26" class="outline-2">
+<h2 id="orgf700a26">javascript stuff</h2>
+<div class="outline-text-2" id="text-orgf700a26">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span style="font-weight: bold;">setq</span> js-indent-level 2)
@@ -3662,9 +3662,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-org10e42f8" class="outline-2">
-<h2 id="org10e42f8"><span class="section-number-2">53.</span> start page</h2>
-<div class="outline-text-2" id="text-53">
+<div id="outline-container-orge0b744d" class="outline-2">
+<h2 id="orge0b744d">start page</h2>
+<div class="outline-text-2" id="text-orge0b744d">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 <span style="font-weight: bold; font-style: italic;">;    </span><span style="font-weight: bold; font-style: italic;">(setq initial-buffer-choice "~/.emacs.d/start.org")</span>
@@ -3687,9 +3687,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-org364894d" class="outline-2">
-<h2 id="org364894d"><span class="section-number-2">54.</span> dashboard</h2>
-<div class="outline-text-2" id="text-54">
+<div id="outline-container-org89903c7" class="outline-2">
+<h2 id="org89903c7">dashboard</h2>
+<div class="outline-text-2" id="text-org89903c7">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span style="font-weight: bold;">use-package</span> dashboard
@@ -3713,9 +3713,9 @@ for task dependencies
 </div>
 
 
-<div id="outline-container-org8174cae" class="outline-2">
-<h2 id="org8174cae"><span class="section-number-2">55.</span> perspective</h2>
-<div class="outline-text-2" id="text-55">
+<div id="outline-container-org02f2993" class="outline-2">
+<h2 id="org02f2993">perspective</h2>
+<div class="outline-text-2" id="text-org02f2993">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span style="font-weight: bold;">use-package</span> perspective
@@ -3739,9 +3739,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-org8b534e1" class="outline-2">
-<h2 id="org8b534e1"><span class="section-number-2">56.</span> miscellaneous settings</h2>
-<div class="outline-text-2" id="text-56">
+<div id="outline-container-org00a0cef" class="outline-2">
+<h2 id="org00a0cef">miscellaneous settings</h2>
+<div class="outline-text-2" id="text-org00a0cef">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  (global-display-line-numbers-mode)
   (add-to-list 'safe-local-variable-values '(org-roam-directory . <span style="font-style: italic;">"~/Documents/wizr/meetingnotes"</span>))
@@ -3850,9 +3850,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-org2e71d8f" class="outline-2">
-<h2 id="org2e71d8f"><span class="section-number-2">57.</span> deft</h2>
-<div class="outline-text-2" id="text-57">
+<div id="outline-container-orgaa41bf4" class="outline-2">
+<h2 id="orgaa41bf4">deft</h2>
+<div class="outline-text-2" id="text-orgaa41bf4">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  (<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">lik/deft-kill</span> ()
   (kill-buffer <span style="font-style: italic;">"*Deft*"</span>))
@@ -3890,9 +3890,9 @@ for task dependencies
 
 
 
-<div id="outline-container-org0b97ea6" class="outline-2">
-<h2 id="org0b97ea6"><span class="section-number-2">58.</span> popper.el</h2>
-<div class="outline-text-2" id="text-58">
+<div id="outline-container-org5b0fdb6" class="outline-2">
+<h2 id="org5b0fdb6">popper.el</h2>
+<div class="outline-text-2" id="text-org5b0fdb6">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> popper
 <span style="font-weight: bold;">:bind</span> ((<span style="font-style: italic;">"C-`"</span>   . popper-toggle-latest)
@@ -3911,9 +3911,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-orge5f8692" class="outline-2">
-<h2 id="orge5f8692"><span class="section-number-2">59.</span> coding stuff</h2>
-<div class="outline-text-2" id="text-59">
+<div id="outline-container-orga063bd0" class="outline-2">
+<h2 id="orga063bd0">coding stuff</h2>
+<div class="outline-text-2" id="text-orga063bd0">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> rainbow-mode <span style="font-weight: bold;">:defer</span> t)
 (<span style="font-weight: bold;">use-package</span> quickrun <span style="font-weight: bold;">:defer</span> t
@@ -3925,9 +3925,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-org5b586ca" class="outline-3">
-<h3 id="org5b586ca"><span class="section-number-3">59.1.</span> html/css/js</h3>
-<div class="outline-text-3" id="text-59-1">
+<div id="outline-container-orgdad5793" class="outline-3">
+<h3 id="orgdad5793">html/css/js</h3>
+<div class="outline-text-3" id="text-orgdad5793">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> web-mode
              <span style="font-weight: bold;">:defer</span> t
@@ -3949,9 +3949,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-org63420d0" class="outline-3">
-<h3 id="org63420d0"><span class="section-number-3">59.2.</span> emacs-lisp-mode</h3>
-<div class="outline-text-3" id="text-59-2">
+<div id="outline-container-orgf478bf1" class="outline-3">
+<h3 id="orgf478bf1">emacs-lisp-mode</h3>
+<div class="outline-text-3" id="text-orgf478bf1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> emacs-lisp-mode
   <span style="font-weight: bold;">:straight</span> nil
@@ -3981,9 +3981,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-org2f70b02" class="outline-2">
-<h2 id="org2f70b02"><span class="section-number-2">60.</span> spacious padding</h2>
-<div class="outline-text-2" id="text-60">
+<div id="outline-container-org6e1d702" class="outline-2">
+<h2 id="org6e1d702">spacious padding</h2>
+<div class="outline-text-2" id="text-org6e1d702">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(straight-use-package 'spacious-padding)
   (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">spacious-padding</span>)
@@ -4012,9 +4012,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-org6e3246c" class="outline-2">
-<h2 id="org6e3246c"><span class="section-number-2">61.</span> org-evil</h2>
-<div class="outline-text-2" id="text-61">
+<div id="outline-container-orgdc6fe0c" class="outline-2">
+<h2 id="orgdc6fe0c">org-evil</h2>
+<div class="outline-text-2" id="text-orgdc6fe0c">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">dash</span>)
 (global-dash-fontify-mode)
@@ -4046,9 +4046,9 @@ for task dependencies
 </div>
 </div>
 </div>
-<div id="outline-container-org6f07481" class="outline-2">
-<h2 id="org6f07481"><span class="section-number-2">62.</span> yuck-mode</h2>
-<div class="outline-text-2" id="text-62">
+<div id="outline-container-orgf3204d6" class="outline-2">
+<h2 id="orgf3204d6">yuck-mode</h2>
+<div class="outline-text-2" id="text-orgf3204d6">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(straight-use-package 'yuck-mode)
 (straight-use-package 'lua-mode)
@@ -4064,9 +4064,9 @@ for task dependencies
 </div>
 </div>
 </div>
-<div id="outline-container-org256a48d" class="outline-2">
-<h2 id="org256a48d"><span class="section-number-2">63.</span> eat</h2>
-<div class="outline-text-2" id="text-63">
+<div id="outline-container-org86fa7e4" class="outline-2">
+<h2 id="org86fa7e4">eat</h2>
+<div class="outline-text-2" id="text-org86fa7e4">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(straight-use-package
  '(eat <span style="font-weight: bold;">:type</span> git
@@ -4081,9 +4081,9 @@ for task dependencies
 </div>
 </div>
 </div>
-<div id="outline-container-orge0902da" class="outline-2">
-<h2 id="orge0902da"><span class="section-number-2">64.</span> sudo-edit</h2>
-<div class="outline-text-2" id="text-64">
+<div id="outline-container-org39bb3f6" class="outline-2">
+<h2 id="org39bb3f6">sudo-edit</h2>
+<div class="outline-text-2" id="text-org39bb3f6">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">      (straight-use-package 'sudo-edit)
       (global-prettify-symbols-mode t)
@@ -4115,9 +4115,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-org7c2e21a" class="outline-2">
-<h2 id="org7c2e21a"><span class="section-number-2">65.</span> ledger mode</h2>
-<div class="outline-text-2" id="text-65">
+<div id="outline-container-orge45f3b6" class="outline-2">
+<h2 id="orge45f3b6">ledger mode</h2>
+<div class="outline-text-2" id="text-orge45f3b6">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (<span style="font-weight: bold;">use-package</span> ledger-mode
@@ -4173,9 +4173,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-orgc0adbd0" class="outline-2">
-<h2 id="orgc0adbd0"><span class="section-number-2">66.</span> presentation mode</h2>
-<div class="outline-text-2" id="text-66">
+<div id="outline-container-orgd9587e9" class="outline-2">
+<h2 id="orgd9587e9">presentation mode</h2>
+<div class="outline-text-2" id="text-orgd9587e9">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(straight-use-package 'org-present)
 (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-faces</span>)
@@ -4219,9 +4219,9 @@ for task dependencies
 </div>
 </div>
 </div>
-<div id="outline-container-orgf050324" class="outline-2">
-<h2 id="orgf050324"><span class="section-number-2">67.</span> rust</h2>
-<div class="outline-text-2" id="text-67">
+<div id="outline-container-orge71872a" class="outline-2">
+<h2 id="orge71872a">rust</h2>
+<div class="outline-text-2" id="text-orge71872a">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">
 (straight-use-package 'rust-mode)
@@ -4258,9 +4258,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-org8c8a763" class="outline-2">
-<h2 id="org8c8a763"><span class="section-number-2">68.</span> fzf</h2>
-<div class="outline-text-2" id="text-68">
+<div id="outline-container-org21d0159" class="outline-2">
+<h2 id="org21d0159">fzf</h2>
+<div class="outline-text-2" id="text-org21d0159">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">  (<span style="font-weight: bold;">use-package</span> fzf
 <span style="font-weight: bold; font-style: italic;">;    </span><span style="font-weight: bold; font-style: italic;">:init</span>
@@ -4278,9 +4278,9 @@ for task dependencies
 </div>
 </div>
 
-<div id="outline-container-orgb703a08" class="outline-2">
-<h2 id="orgb703a08"><span class="section-number-2">69.</span> gptel</h2>
-<div class="outline-text-2" id="text-69">
+<div id="outline-container-org3e95d66" class="outline-2">
+<h2 id="org3e95d66">gptel</h2>
+<div class="outline-text-2" id="text-org3e95d66">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">use-package</span> gptel
   <span style="font-weight: bold;">:ensure</span> t)
@@ -4297,9 +4297,9 @@ for task dependencies
 </div>
 
 
-<div id="outline-container-orgad24503" class="outline-2">
-<h2 id="orgad24503"><span class="section-number-2">70.</span> helper functions for website</h2>
-<div class="outline-text-2" id="text-70">
+<div id="outline-container-org9dc97e0" class="outline-2">
+<h2 id="org9dc97e0">helper functions for website</h2>
+<div class="outline-text-2" id="text-org9dc97e0">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">update-blog-index</span> ()
   (<span style="font-weight: bold;">interactive</span>)
@@ -4314,7 +4314,7 @@ for task dependencies
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: likith</p>
-<p class="date">Created: 2025-04-26 Sat 16:24</p>
+<p class="date">Created: 2025-04-26 Sat 16:37</p>
 </div>
 </body>
 </html>
