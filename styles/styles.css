@@ -123,3 +123,20 @@ blockquote {
 .post-excerpt p {
   margin: 0.5rem 0;
 }
+.post-title {
+    color: #6e9fd4;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+}
+
+.post-content {
+    background: #252525;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+.post-date {
+    color: #777;
+    font-style: italic;
+}

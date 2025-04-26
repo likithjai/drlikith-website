@@ -74,6 +74,7 @@
          :publishing-function org-html-publish-to-html
          :section-numbers nil
          :with-toc nil
+		 :html-head ,org-html-head
          :htmlized-source t)
         
         ("site-blog-index"
@@ -83,15 +84,16 @@
          :recursive nil
          :publishing-function org-html-publish-to-html
          :auto-sitemap nil
+		 :html-head ,org-html-head
          :htmlized-source t)
         
         ("site" :components ("site-content" "site-blog-posts" "site-blog-index"))))
 
 
-(setq org-html-validation-link nil ;; don't show validation link
-	  org-html-head-include-scripts nil ;; use our own scripts
-	  org-html-head-include-default-style nil ;; use our own styles
-	  org-html-head "<link rel=\"stylesheet\" href=\"./styles/styles.css\" />")
+;; (setq org-html-validation-link nil ;; don't show validation link
+;; 	  org-html-head-include-scripts nil ;; use our own scripts
+;; 	  org-html-head-include-default-style nil ;; use our own styles
+;; 	  org-html-head "<link rel=\"stylesheet\" href=\"./styles/styles.css\" />")
 
 ;; Enable essential org features
 (org-publish-all t)
