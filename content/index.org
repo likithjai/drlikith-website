@@ -9,3 +9,4 @@ here is a link to my [[./config.org][emacs configuration]]
 
 [[./blog-index.org][here is my blog]]
 
+#+include: ./footer.org
