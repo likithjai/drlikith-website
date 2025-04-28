@@ -1,12 +1,9 @@
 #+description: footer
 #+options: num:nil ^:{}
 
-#+begin_export html
-<p class="footer-text">
-copyright © 2025-2026 Likith
+#+attr_html: :class footer-text
+ copyright © 2025-2026 Likith
 
-this page is licensed under a [[https://creativecommons.org/licenses/by-nd/4.0/][Creative Commons Attribution-NoDerivatives 4.0 Internation License]] (CC-BY-ND 4.0).
-
-the source code for drlikith.com can be found on [[https://github.com/likithjai/drlikith-website][github]].
-</p>
-#+end_export
+ this page is licensed under a [[https://creativecommons.org/licenses/by-nd/4.0/][Creative Commons Attribution-NoDerivatives 4.0 Internation License]] (CC-BY-ND 4.0).
+ 
+ the source code for drlikith.com can be found on [[https://github.com/likithjai/drlikith-website][github]].

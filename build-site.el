@@ -63,6 +63,7 @@
          :publishing-function org-html-publish-to-html
          :headline-levels 4
          :auto-preamble t
+		 :html-postamble nil
          :auto-sitemap nil  ; We'll handle the blog index separately
          :htmlized-source t
 		 :with-toc nil
@@ -76,6 +77,7 @@
          :publishing-function org-html-publish-to-html
          :section-numbers nil
          :with-toc nil
+		 :html-postamble nil
 		 :html-head ,org-html-head
          :htmlized-source t)
         
@@ -89,6 +91,7 @@
 		 :with-toc nil
 		 :section-numbers nil
 		 :html-head ,org-html-head
+		 :html-postamble nil
          :htmlized-source t)
         
         ("site" :components ("site-content" "site-blog-posts" "site-blog-index"))))
