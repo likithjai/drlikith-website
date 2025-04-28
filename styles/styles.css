@@ -140,3 +140,8 @@ blockquote {
     color: #777;
     font-style: italic;
 }
+
+.footer-text {
+	font-size: 0.85em;
+	color: #2a2a2a;
+}
