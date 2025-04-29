@@ -3757,3 +3757,10 @@ for task dependencies
     (save-buffer)
     (org-html-export-to-html))
 #+end_src
+
+
+* weblorg
+
+#+begin_src emacs-lisp
+  (use-package weblorg)
+#+end_src

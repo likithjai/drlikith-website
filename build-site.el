@@ -22,6 +22,15 @@
 (require 'ob-core)
 (require 'ob-lisp)
 
+(defun update-blog-index ()
+  (interactive)
+  (find-file "./content/blog-index.org")
+  (org-ctrl-c-ctrl-c) ;execute the elisp code
+  (save-buffer)
+  (org-html-export-to-html))
+
+
+(update-blog-index)
 
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -103,8 +112,8 @@
 ;; 	  org-html-head "<link rel=\"stylesheet\" href=\"./styles/styles.css\" />")
 
 ;; Enable essential org features
-(org-publish-all t)
 
+(org-publish-all t)
 
 
 (message "build complete!")
