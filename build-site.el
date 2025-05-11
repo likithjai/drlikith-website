@@ -46,7 +46,7 @@
       org-html-head-include-scripts nil
       org-html-head-include-default-style nil
       org-export-with-section-numbers nil
-      org-html-head "<link rel=\"stylesheet\" href=\"./styles/styles.css\" />")
+      org-html-head "<link rel=\"stylesheet\" href=\"/styles/styles.css\" />")
 
 ;; define the publishing project
 ;; (setq org-publish-project-alist
