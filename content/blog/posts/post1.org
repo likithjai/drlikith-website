@@ -1,17 +1,28 @@
 #+title: coming back to life
 #+date: <2025-04-26 Sat>
-#+description: a brief summary of this post
-
-* Introduction
-
-this is my first blog post...
-
-* main content
-more details here...
+#+description: a gradual return to posting online
+#+export_file_name: ../../../blog/posts/post1
 
 
+If you had told me two years ago that, two years from then, I would be in Bangalore, doing primarily video-editing as a job, for my friend's financial advisory company, I'd probably laugh it off as completely insane. I have found myself in similar situations over the past decade or so, where my life at one point in time, would probably have been unrecognisable to me 2-4 years prior. For a big chunk of my life, I was barely in touch with what I really wanted to do, but I'm happy to say that that has gradually been getting further and further away from the truth.
+
+* career
+
+After spending five years learning the ins and outs of how atoms behave, what electrons do, and their implications thereof, I slowly came to a painful realisation towards the end: While I genuinely enjoyed certain aspects of it, I didn't really want to keep doing research for the rest of my career. I knew this beyond a shadow of doubt during my postdoc position for which I did DFT ([[https://sci-hub.se/10.1021/jp960669l][Density Functional Theory]]) for a primarily experimental research group. Of course this pursuit itself taught me a lot of lessons that have come to be invaluable to me, as a person, and this is true for the topic too.
+
+But I successfully pivoted towards data analytics and I did enjoy it a lot, and thought, for a second, that I had found my path. Working for Deloitte (for [[https://www.mtb.com/personal][M&T Bank]] as a client) was a lot of fun. It brought  the problem-solving aspect that I enjoyed during my [[https://scholar.google.com/citations?user=jrlwT9IAAAAJ&hl=en][research]] and combined that with a fast-paced, high-stakes environment with a supportive manager, and in this environment, I daresay I thrived.
+
+All seemed well, until I decided to come back to Bangalore, and continue along the same career path. Things didn't work out as I expected, and the next thing I knew, I had been job hunting for about a year and a half. I had been learning video editing (using only [[https://ffmpeg.org/][ffmpeg]] at the time, mind you) as a hobby. Cut to a couple of months later, and I was now primarily a video editor at [[https://www.instagram.com/getwizr/?hl=en][Wizr Wealth]], a company that I am proud to say my friend had started a few years ago. Some of the perks include:
+
++ I get to use whatever software I want for the work that I do. I get to use python, emacs, and linux itself, and it really does feel like home in a lot of ways (looking at you, [[https://mse.ufl.edu/people/name/nancy-ruzycki/][Dr. R]])
++ I get to use my camera on a regular basis, and I have gotten to learn lots of things about studios, lighting, etc.
++ I am not bound by rigid hierarchies and meaningless (to me) rules which is typical, but of course, not always true, in larger organisations (in my experience at least)
++ I get to code, but I don't really /have/ to
+
+
+* "family" :noexport:
 
 
 
 
-#+include: ./footer.org
+#+include: ../../footer.org
