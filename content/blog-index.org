@@ -1,7 +1,7 @@
 #+TITLE: my blog
 #+OPTIONS: toc:nil
 
-* Recent Posts
+* recent posts
 
 
 #+begin_src emacs-lisp :exports results :results output raw :eval yes

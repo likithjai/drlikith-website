@@ -1,6 +1,7 @@
 #+title: coming back to life
 #+date: <2025-04-26 Sat>
 #+description: a gradual return to posting online
+#+options: toc:nil
 #+export_file_name: ../../../blog/posts/post1
 
 
