@@ -33,208 +33,235 @@
 * general configuration
 
 #+begin_src emacs-lisp
-  (server-start)
-  (winner-mode 1)
+    (server-start)
+    (winner-mode 1)
 
-  ;; interaction
-  (setq use-short-answers t) ;; when emacs asks for 'yes' or 'no', let 'y' or 'n' suffice
-  (setq confirm-kill-emacs 'yes-or-no-p) ;;confirm to quit
-  (setq initial-major-mode 'org-mode ;; major mode of new buffers
-        initial-scratch-message "")
+    ;; interaction
+    (setq use-short-answers t) ;; when emacs asks for 'yes' or 'no', let 'y' or 'n' suffice
+    (setq confirm-kill-emacs 'yes-or-no-p) ;;confirm to quit
+    (setq initial-major-mode 'org-mode ;; major mode of new buffers
+          initial-scratch-message "")
 
-  ;; window
-  (setq frame-resize-pixelwise t)
-  (setq ns-pop-up-frames nil)
-  (setq window-resize-pixelwise nil)
-  (setq split-width-threshold 80)
-  (setq lik-default-line-spacing 2)
-
-
-        (defun lik/org-setup ()
-          (org-indent-mode) ;;keeps org items like text under headings, lists, nicely indented 
-          (visual-line-mode 1) ;; nice line wrapping
-      ;    (centered-cursor-mode 1) ;; enable centered cursor mode
-          (smartparens-mode 0) ;; disable smartparens
-  ;        (hl-prog-extra-mode) ;; highlighting with regexps
-          (setq-local line-spacing (+ lik-default-line-spacing 2)) ;; a bit more line spacing for org mode
-          (valign-mode)
-          )
+    ;; window
+    (setq frame-resize-pixelwise t)
+    (setq ns-pop-up-frames nil)
+    (setq window-resize-pixelwise nil)
+    (setq split-width-threshold 80)
+    (setq lik-default-line-spacing 2)
 
 
-
-        (defun lik/prettify-symbols-setup ()
-        ;; checkboxes
-        (push '("[ ]" .  "\u2610") prettify-symbols-alist)
-        (push '("[X]" . "\u2611" ) prettify-symbols-alist)
-        ;; (push '("[X]" . "\u2612" ) prettify-symbols-alist)
-        (push '("[-]" . "\u274d" ) prettify-symbols-alist)
-
-        ;; org-babel
-        (push '("#+BEGIN_SRC" . ?\u226b) prettify-symbols-alist)
-        (push '("#+END_SRC" . ?\u226b) prettify-symbols-alist)
-        (push '("#+begin_src" . ?\u226b) prettify-symbols-alist)
-        (push '("#+end_src" . ?\u226b) prettify-symbols-alist)
-
-        (push '("#+BEGIN_QUOTE" . ?\u275d) prettify-symbols-alist)
-        (push '("#+END_QUOTE" . ?\u275e) prettify-symbols-alist)
-
-        ;; (push '("#+BEGIN_SRC python" . \ue928) prettify-symbols-alist) ;; This is the Python symbol. Comes up weird for some reason
-        (push '("#+RESULTS:" . ?\u225a ) prettify-symbols-alist)
-
-        ;; drawers
-        (push '(":PROPERTIES:" . ?\uf1de) prettify-symbols-alist)
-
-        ;; tags
-        ;; (push '(":Misc:" . "\ue2c8" ) prettify-symbols-alist)
-
-        (prettify-symbols-mode))
-
-  	(use-package ob-nix
-  		:ensure t
-  		:defer 0
-  		:config
-  		(require 'ob-nix))
-
-
-        (use-package org
-          :hook (org-mode . lik/org-setup)
-          :hook (org-mode . lik/prettify-symbols-setup)
-          :hook (org-capture-mode . evil-insert-state) ;; start org-capture in insert state by default
-          :diminish org-indent-mode
-          :diminish visual-line-mode
-          :config
-          (setq org-directory "~/Documents/orgfiles")
-          (setq org-agenda-files
-                '("tasks.org"
-                  "birthdays.org"
-                  "social_media_planning.org"
-                  "~/org_mode_exp/example-file.org"
-                  "~/Documents/wizr/work_master.org"))
-          (setq org-agenda-start-with-log-mode t)
-          (setq org-log-done 'time)
-          (setq org-log-into-drawer t)
-          (setq org-startup-with-inline-images t)
-          (setq org-src-fontify-natively t)
-          (setq org-highlight-latex-and-related '(native)); highlight inline latex
-          (setq org-startup-folded 'showeverything)
-          (setq org-image-actual-width 300)
-          (setq org-fontify-whole-heading-line t)
-          (setq org-pretty-entities t)
-          (setq org-cycle-separator-lines 1)
-          (setq org-catch-invisible-edits 'show-and-error) ;; 'smart
-          (setq org-src-tab-acts-natively t)
-
-          ;; M-Ret can split lines on items and tables but not headlines and not on anything else (unconfigured)
-          (setq org-M-RET-may-split-line '((headline) (item . t) (table . t) (default)))
-          (setq org-loop-over-headlines-in-active-region nil)
-
-          ;; Opens links to other org file in same frame (rather than splitting)
-          (setq org-link-frame-setup '((file . find-file)))
-
-          (setq org-log-done t
-            org-log-into-drawer t)
-
-      ;; Automatically change bullet type when indenting
-      ;; Ex: indenting a + makes the bullet a *.
-          (setq org-list-demote-modify-bullet
-            '(("+" . "*") ("*" . "-") ("-" . "+")))
-          ;; Automatically save and close the org files I most frequently archive to.
-    ;; I see no need to keep them open and crowding my buffer list.
-    ;; Uses my own function jib/save-and-close-this-buffer.
-          (dolist (file '("/home/lik/Documents/orgfiles/archive.org"))
-
-            (advice-add 'org-archive-subtree-default :after 
-                  (lambda () (lik/save-and-close-this-buffer file)))))
+          (defun lik/org-setup ()
+            (org-indent-mode) ;;keeps org items like text under headings, lists, nicely indented 
+            (visual-line-mode 1) ;; nice line wrapping
+        ;    (centered-cursor-mode 1) ;; enable centered cursor mode
+            (smartparens-mode 0) ;; disable smartparens
+    ;        (hl-prog-extra-mode) ;; highlighting with regexps
+            (setq-local line-spacing (+ lik-default-line-spacing 2)) ;; a bit more line spacing for org mode
+            (valign-mode)
+            )
 
 
 
+          (defun lik/prettify-symbols-setup ()
+          ;; checkboxes
+          (push '("[ ]" .  "\u2610") prettify-symbols-alist)
+          (push '("[X]" . "\u2611" ) prettify-symbols-alist)
+          ;; (push '("[X]" . "\u2612" ) prettify-symbols-alist)
+          (push '("[-]" . "\u274d" ) prettify-symbols-alist)
 
-  ;; lines
-  (setq truncate-lines t)
-  (setq-default tab-width 4)
-  (setq-default fill-column 80)
-  (setq line-mode-visual t);; C-p, C-n, etc uses visual lines
+          ;; org-babel
+          (push '("#+BEGIN_SRC" . ?\u226b) prettify-symbols-alist)
+          (push '("#+END_SRC" . ?\u226b) prettify-symbols-alist)
+          (push '("#+begin_src" . ?\u226b) prettify-symbols-alist)
+          (push '("#+end_src" . ?\u226b) prettify-symbols-alist)
 
-  (use-package paren
-    ;; highlight matching delimiters
-    :straight nil
-    :config
-    (setq show-paren-delay 0.1
-          show-paren-highlight-openparen t
-          show-paren-when-point-inside-paren t
-          show-paren-when-point-in-periphery t)
-    (show-paren-mode 1))
+          (push '("#+BEGIN_QUOTE" . ?\u275d) prettify-symbols-alist)
+          (push '("#+END_QUOTE" . ?\u275e) prettify-symbols-alist)
 
-  (setq sentence-end-double-space nil) ;; sentences end with one space
-  (setq bookmark-set-fringe-mark nil)
+          ;; (push '("#+BEGIN_SRC python" . \ue928) prettify-symbols-alist) ;; This is the Python symbol. Comes up weird for some reason
+          (push '("#+RESULTS:" . ?\u225a ) prettify-symbols-alist)
 
-  ;; scrolling
-  (setq scroll-conservatively 101)
-  (setq
-   mouse-wheel-follow-mouse 't
-   mouse-wheel-progressive-speed nil
-   ;; the most important setting of all! make each scroll-event move 2 lines at
-   ;; a time (instead of 5 at default). simply hold down shift to move twice
-   ;; fast, or hold down control to move 3x as fast. perfect for trackpads
-   mouse-wheel-scroll-amount '(1 ((shift) . 3) ((control) . 6)))
-  (setq visible-bell nil)
-  (setq ring-bell-function 'ignore)
+          ;; drawers
+          (push '(":PROPERTIES:" . ?\uf1de) prettify-symbols-alist)
+
+          ;; tags
+          ;; (push '(":Misc:" . "\ue2c8" ) prettify-symbols-alist)
+
+          (prettify-symbols-mode))
+
+    	(use-package ob-nix
+    		:ensure t
+    		:defer 0
+    		:config
+    		(require 'ob-nix))
 
 
-  ;; try really hard to keep the cursor from getting stuck in the read-only prompt
-  ;; portion of the minibuffer
-  (setq minibuffer-prompt-properties '(read-only t intangible t cursor-intangible t face minibuffer-prompt))
-  (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+      (use-package org
+    :defer
+    :straight `(org
+                :fork (:host nil
+                       :repo "https://git.tecosaur.net/tec/org-mode.git"
+                       :branch "dev"
+                       :remote "tecosaur")
+                :files (:defaults "etc")
+                :build t
+                :pre-build
+                (with-temp-file "org-version.el"
+                 (require 'lisp-mnt)
+                 (let ((version
+                        (with-temp-buffer
+                          (insert-file-contents "lisp/org.el")
+                          (lm-header "version")))
+                       (git-version
+                        (string-trim
+                         (with-temp-buffer
+                           (call-process "git" nil t nil "rev-parse" "--short" "HEAD")
+                           (buffer-string)))))
+                  (insert
+                   (format "(defun org-release () \"The release version of Org.\" %S)\n" version)
+                   (format "(defun org-git-version () \"The truncate git commit hash of Org mode.\" %S)\n" git-version)
+                   "(provide 'org-version)\n")))
+                :pin nil)
 
-  ;; explicitly define a width to reduce the cost of on-the-fly computation
+  					
+           :hook (org-mode . lik/org-setup)
+           :hook (org-mode . lik/prettify-symbols-setup)
+           :hook (org-capture-mode . evil-insert-state) ;; start org-capture in insert state by default
+           :diminish org-indent-mode
+           :diminish visual-line-mode
+           :config
+           (setq org-directory "~/Documents/orgfiles")
+           (setq org-agenda-files
+                 '("tasks.org"
+                   "birthdays.org"
+                   "social_media_planning.org"
+                   "~/org_mode_exp/example-file.org"
+                   "~/Documents/wizr/work_master.org"))
+           (setq org-agenda-start-with-log-mode t)
+           (setq org-log-done 'time)
+           (setq org-log-into-drawer t)
+           (setq org-startup-with-inline-images t)
+           (setq org-src-fontify-natively t)
+           (setq org-highlight-latex-and-related '(native)); highlight inline latex
+           (setq org-startup-folded 'showeverything)
+           (setq org-image-actual-width 300)
+           (setq org-fontify-whole-heading-line t)
+           (setq org-pretty-entities t)
+           (setq org-cycle-separator-lines 1)
+           (setq org-catch-invisible-edits 'show-and-error) ;; 'smart
+           (setq org-src-tab-acts-natively t)
 
-  (setq-default display-line-numbers-width 3)
+           ;; M-Ret can split lines on items and tables but not headlines and not on anything else (unconfigured)
+           (setq org-M-RET-may-split-line '((headline) (item . t) (table . t) (default)))
+           (setq org-loop-over-headlines-in-active-region nil)
 
-  ;; when opening a symlink that links to a file in a git repo, edit the file
-  ;; in the git repo so we can use the emacs vc features (like diff) in the future
-  (setq vc-follow-symlinks t)
+           ;; Opens links to other org file in same frame (rather than splitting)
+           (setq org-link-frame-setup '((file . find-file)))
 
-  ;; backups/lockfiles
-  ;; don't generate backups or lockfiles
-  (setq create-lockfiles nil
-        make-backup-files nil
-        ;; but in case the user does enable it, some sensible defaults
-        version-control t
-        backup-by-copying t
-        delete-old-versions t
-        kept-old-versions 5
-        kept-new-versions 5
-        backup-directory-alist (list (cons "." (concat user-emacs-directory "backup/"))))
+           (setq org-log-done t
+             org-log-into-drawer t)
 
-  (use-package recentf
-    :straight nil
-    :config
-    (setq ;;recentf-auto-cleanup 'never
-     ;; recentf-max-menu-items 0
-     recentf-max-saved-items 200)
-    (setq recentf-filename-handlers ;; show home folder path as a ~
-          (append '(abbreviate-file-name) recentf-filename-handlers))
-    (recentf-mode))
+       ;; Automatically change bullet type when indenting
+       ;; Ex: indenting a + makes the bullet a *.
+           (setq org-list-demote-modify-bullet
+             '(("+" . "*") ("*" . "-") ("-" . "+")))
+           ;; Automatically save and close the org files I most frequently archive to.
+     ;; I see no need to keep them open and crowding my buffer list.
+     ;; Uses my own function jib/save-and-close-this-buffer.
+           (dolist (file '("/home/lik/Documents/orgfiles/archive.org"))
 
-  (require 'uniquify)
-  (setq uniquify-buffer-name-style 'forward)
+             (advice-add 'org-archive-subtree-default :after 
+                   (lambda () (lik/save-and-close-this-buffer file)))))
 
-  ;; encoding
-  (when (fboundp 'set-charset-priority)
-    (set-charset-priority 'unicode))
-  (prefer-coding-system 'utf-8)
-  (setq locale-coding-system 'utf-8)
 
-  (setq blink-cursor-interval 0.6)
-  (blink-cursor-mode 0)
 
-  (setq save-interprogram-paste-before-kill t
-        apropos-do-all t
-        mouse-yank-at-point t)
 
-  (setq what-cursor-show-names t) ;; improves C-x
-  (setq dired-kill-when-opening-new-dired-buffer t)
-  (setq reb-re-syntax 'string) ;; https://www.masteringemacs.org/article/re-builder-interactive-regexp-builder
+    ;; lines
+    (setq truncate-lines t)
+    (setq-default tab-width 4)
+    (setq-default fill-column 80)
+    (setq line-mode-visual t);; C-p, C-n, etc uses visual lines
+
+    (use-package paren
+      ;; highlight matching delimiters
+      :straight nil
+      :config
+      (setq show-paren-delay 0.1
+            show-paren-highlight-openparen t
+            show-paren-when-point-inside-paren t
+            show-paren-when-point-in-periphery t)
+      (show-paren-mode 1))
+
+    (setq sentence-end-double-space nil) ;; sentences end with one space
+    (setq bookmark-set-fringe-mark nil)
+
+    ;; scrolling
+    (setq scroll-conservatively 101)
+    (setq
+     mouse-wheel-follow-mouse 't
+     mouse-wheel-progressive-speed nil
+     ;; the most important setting of all! make each scroll-event move 2 lines at
+     ;; a time (instead of 5 at default). simply hold down shift to move twice
+     ;; fast, or hold down control to move 3x as fast. perfect for trackpads
+     mouse-wheel-scroll-amount '(1 ((shift) . 3) ((control) . 6)))
+    (setq visible-bell nil)
+    (setq ring-bell-function 'ignore)
+
+
+    ;; try really hard to keep the cursor from getting stuck in the read-only prompt
+    ;; portion of the minibuffer
+    (setq minibuffer-prompt-properties '(read-only t intangible t cursor-intangible t face minibuffer-prompt))
+    (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+
+    ;; explicitly define a width to reduce the cost of on-the-fly computation
+
+    (setq-default display-line-numbers-width 3)
+
+    ;; when opening a symlink that links to a file in a git repo, edit the file
+    ;; in the git repo so we can use the emacs vc features (like diff) in the future
+    (setq vc-follow-symlinks t)
+
+    ;; backups/lockfiles
+    ;; don't generate backups or lockfiles
+    (setq create-lockfiles nil
+          make-backup-files nil
+          ;; but in case the user does enable it, some sensible defaults
+          version-control t
+          backup-by-copying t
+          delete-old-versions t
+          kept-old-versions 5
+          kept-new-versions 5
+          backup-directory-alist (list (cons "." (concat user-emacs-directory "backup/"))))
+
+    (use-package recentf
+      :straight nil
+      :config
+      (setq ;;recentf-auto-cleanup 'never
+       ;; recentf-max-menu-items 0
+       recentf-max-saved-items 200)
+      (setq recentf-filename-handlers ;; show home folder path as a ~
+            (append '(abbreviate-file-name) recentf-filename-handlers))
+      (recentf-mode))
+
+    (require 'uniquify)
+    (setq uniquify-buffer-name-style 'forward)
+
+    ;; encoding
+    (when (fboundp 'set-charset-priority)
+      (set-charset-priority 'unicode))
+    (prefer-coding-system 'utf-8)
+    (setq locale-coding-system 'utf-8)
+
+    (setq blink-cursor-interval 0.6)
+    (blink-cursor-mode 0)
+
+    (setq save-interprogram-paste-before-kill t
+          apropos-do-all t
+          mouse-yank-at-point t)
+
+    (setq what-cursor-show-names t) ;; improves C-x
+    (setq dired-kill-when-opening-new-dired-buffer t)
+    (setq reb-re-syntax 'string) ;; https://www.masteringemacs.org/article/re-builder-interactive-regexp-builder
 
 
 #+end_src
@@ -243,113 +270,115 @@
 
 #+begin_src emacs-lisp
 
-      (tool-bar-mode -1)
-      (defvar emacs/default-font-size 240)
-      (add-to-list 'default-frame-alist '(font . "Agave Nerd Font Mono-24"))
-      (menu-bar-mode -1)
-      (tooltip-mode -1)
-      (set-fringe-mode 10)
-      (column-number-mode)
-      (global-display-line-numbers-mode t)
-      (dolist (mode '(org-mode-hook
-                      term-mode-hook
-                      eshell-mode-hook
-;                      treemacs-mode-hook
-                      shell-mode-hook))
-        (add-hook mode (lambda () (display-line-numbers-mode 0))))
-      (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                               ("org" . "https://orgmode.org/elpa/")
-                               ("elpa" . "https://elpa.gnu.org/packages/")))
-;      (require 'package)
-;      (package-initialize)
-;      (setq my-packages
-;            '(ivy
-;              counsel
-;              json-mode
-;              projectile
-;              cider
-;              clojure-mode
-;              expand-region
-;              jinja2-mode
-;              magit
-;              markdown-mode
-;              paredit
-;              wrap-region
-;              yaml-mode
-  ;	    elpy
-;              json-mode
-;              doom-themes
-;              modus-themes
-;              all-the-icons
-;              all-the-icons-dired
-;              which-key
-;              ivy-rich
-;              helpful
-;              rainbow-delimiters
-;              evil
-;              evil-collection
-;              forge
-;              evil-nerd-commenter
-;              projectile
-;              counsel-projectile
-;    ;          dap-mode
-;              typescript-mode
-;              company
-;              company-box
-;              term
-;              eterm-256color
-;              vterm
-;              eshell-git-prompt
-;              eshell
-;              apheleia
-;              pet
-;              lsp-ui
-;              doom-modeline
-;              org
-;              org-bullets
-;              nix-mode
-;              olivetti
-;              visual-fill-column
-;              page-break-lines
-;              nerd-icons
-;              ripgrep
-;              consult
-;              orderless
-;              marginalia
-;              embark
-;              prettier
-;              prettier-js
- ;             prettier-rc
- ;             js2-mode
- ;             org-edna
-;              treemacs
-;              treemacs-evil
-;              treemacs-icons-dired
-;              treemacs-magit
-;              treemacs-persp
-;              treemacs-tab-bar
-;              treemacs-projectile))
- ;     (dolist (pkg my-packages)
- ;       (unless (package-installed-p pkg)
- ;         (package-install pkg)))
- ;     (unless package-archive-contents
- ;       (package-refresh-contents))
-  ;    (unless (package-installed-p 'use-package)
-  ;      (package-install 'use-package))
-;  (require 'use-package)
-;  (setq use-package-verbose nil)
-  (setq standard-indent 2)
+        (tool-bar-mode -1)
+        (defvar emacs/default-font-size 240)
+        (add-to-list 'default-frame-alist '(font . "Agave Nerd Font Mono-24"))
+        (menu-bar-mode -1)
+        (tooltip-mode -1)
+        (set-fringe-mode 10)
+        (column-number-mode)
+        (global-display-line-numbers-mode t)
+  (setq display-line-numbers-type 'relative)
+        (dolist (mode '(org-mode-hook
+                        term-mode-hook
+                        eshell-mode-hook
+  ;                      treemacs-mode-hook
+                        shell-mode-hook))
+          (add-hook mode (lambda () (display-line-numbers-mode 0))))
+        (setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                                 ("org" . "https://orgmode.org/elpa/")
+                                 ("elpa" . "https://elpa.gnu.org/packages/")))
+  (with-eval-after-load 'package (add-to-list 'package-archives '("nongnu" . "https://elpa.nongnu.org/nongnu/")))
+  ;      (require 'package)
+  ;      (package-initialize)
+  ;      (setq my-packages
+  ;            '(ivy
+  ;              counsel
+  ;              json-mode
+  ;              projectile
+  ;              cider
+  ;              clojure-mode
+  ;              expand-region
+  ;              jinja2-mode
+  ;              magit
+  ;              markdown-mode
+  ;              paredit
+  ;              wrap-region
+  ;              yaml-mode
+    ;	    elpy
+  ;              json-mode
+  ;              doom-themes
+  ;              modus-themes
+  ;              all-the-icons
+  ;              all-the-icons-dired
+  ;              which-key
+  ;              ivy-rich
+  ;              helpful
+  ;              rainbow-delimiters
+  ;              evil
+  ;              evil-collection
+  ;              forge
+  ;              evil-nerd-commenter
+  ;              projectile
+  ;              counsel-projectile
+  ;    ;          dap-mode
+  ;              typescript-mode
+  ;              company
+  ;              company-box
+  ;              term
+  ;              eterm-256color
+  ;              vterm
+  ;              eshell-git-prompt
+  ;              eshell
+  ;              apheleia
+  ;              pet
+  ;              lsp-ui
+  ;              doom-modeline
+  ;              org
+  ;              org-bullets
+  ;              nix-mode
+  ;              olivetti
+  ;              visual-fill-column
+  ;              page-break-lines
+  ;              nerd-icons
+  ;              ripgrep
+  ;              consult
+  ;              orderless
+  ;              marginalia
+  ;              embark
+  ;              prettier
+  ;              prettier-js
+   ;             prettier-rc
+   ;             js2-mode
+   ;             org-edna
+  ;              treemacs
+  ;              treemacs-evil
+  ;              treemacs-icons-dired
+  ;              treemacs-magit
+  ;              treemacs-persp
+  ;              treemacs-tab-bar
+  ;              treemacs-projectile))
+   ;     (dolist (pkg my-packages)
+   ;       (unless (package-installed-p pkg)
+   ;         (package-install pkg)))
+   ;     (unless package-archive-contents
+   ;       (package-refresh-contents))
+    ;    (unless (package-installed-p 'use-package)
+    ;      (package-install 'use-package))
+  ;  (require 'use-package)
+  ;  (setq use-package-verbose nil)
+    (setq standard-indent 2)
 
-  (defun lik/get-project-root ()
-    (when (fboundp 'projectile-project-root)
-      (projectile-project-root)))
+    (defun lik/get-project-root ()
+      (when (fboundp 'projectile-project-root)
+        (projectile-project-root)))
 
-  (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+    (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-  (setq history-length 25)
-  (setq savehist-autosave-interval 600)
-  (setq history-delete-duplicates t)
-  (global-auto-revert-mode 1)
+    (setq history-length 25)
+    (setq savehist-autosave-interval 600)
+    (setq history-delete-duplicates t)
+    (global-auto-revert-mode 1)
 
 
 
@@ -772,7 +801,7 @@
   (general-def
     :states '(normal visual motion)
     :keymaps 'override
-    "s" 'consult-line
+;    "s" 'consult-line
     "?" 'evil-search-forward)
 #+end_src
 
@@ -1303,33 +1332,33 @@
 
 #+begin_src emacs-lisp
 
-    (setq gc-cons-threshold 100000000)
-    (setq read-process-output-max (* 1024 1024))
-    (use-package lsp-mode
-      :hook ((python-mode js-mode) . lsp-deferred)
-      :commands lsp
-      :config
-  	(setq lsp-ui-doc-enable nil)
-  	(setq lsp-ui-doc-show-with-cursor nil)
-  	(setq lsp-ui-doc-show-with-mouse nil)
-  	(setq lsp-lens-enable nil)
-  	(setq lsp-headerline-breadcrumb-enable t)
-  	(setq lsp-ui-sideline-enable nil)
-  	(setq lsp-ui-sideline-show-code-actions nil)
-  	(setq lsp-ui-sideline-enable nil)
-  	(setq lsp-ui-sideline-show-hover nil)
-  	(setq lsp-modeline-code-actions-enable nil)
-  	(setq lsp-diagnostics-provider :none)
-  	(setq lsp-ui-sideline-enable nil)
-  	(setq lsp-ui-sideline-show-diagnostics nil)
-  	(setq lsp-eldoc-enable-hover nil)
-  	(setq lsp-modeline-diagnostics-enable nil)
-  	(setq lsp-signature-auto-activate nil)
-  	(setq lsp-signature-render-documentation nil)
-  	(setq lsp-completion-provider :none)
-  	(setq lsp-completion-show-detail nil)
-  	(setq lsp-completion-show-kind nil)
-  	)
+    ;; (setq gc-cons-threshold 100000000)
+    ;; (setq read-process-output-max (* 1024 1024))
+    ;; (use-package lsp-mode
+    ;;   :hook ((python-mode js-mode) . lsp-deferred)
+    ;;   :commands lsp
+    ;;   :config
+    ;; 	(setq lsp-ui-doc-enable nil)
+    ;; 	(setq lsp-ui-doc-show-with-cursor nil)
+    ;; 	(setq lsp-ui-doc-show-with-mouse nil)
+    ;; 	(setq lsp-lens-enable nil)
+    ;; 	(setq lsp-headerline-breadcrumb-enable t)
+    ;; 	(setq lsp-ui-sideline-enable nil)
+    ;; 	(setq lsp-ui-sideline-show-code-actions nil)
+    ;; 	(setq lsp-ui-sideline-enable nil)
+    ;; 	(setq lsp-ui-sideline-show-hover nil)
+    ;; 	(setq lsp-modeline-code-actions-enable nil)
+    ;; 	(setq lsp-diagnostics-provider :none)
+    ;; 	(setq lsp-ui-sideline-enable nil)
+    ;; 	(setq lsp-ui-sideline-show-diagnostics nil)
+    ;; 	(setq lsp-eldoc-enable-hover nil)
+    ;; 	(setq lsp-modeline-diagnostics-enable nil)
+    ;; 	(setq lsp-signature-auto-activate nil)
+    ;; 	(setq lsp-signature-render-documentation nil)
+    ;; 	(setq lsp-completion-provider :none)
+    ;; 	(setq lsp-completion-show-detail nil)
+    ;; 	(setq lsp-completion-show-kind nil)
+    ;; 	)
 
   ;  (use-package lsp-ui
   ;    :commands lsp-ui-mode
@@ -1420,6 +1449,8 @@
     :custom
     (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
   (global-set-key (kbd "C-M-;") 'magit-status)
+  (with-eval-after-load 'magit
+    (define-key magit-status-mode-map (kbd "s") #'magit-stage))
 
 #+end_src
 
@@ -1746,13 +1777,13 @@
   ;;                     "<up>" 'comint-previous-input
   ;;                     "<down>" 'comint-next-input)
 
-  (use-package python-mode
-  			 :ensure t
-  			 :hook (python-mode . lsp-deferred)
-  			 :custom
-  			 (dap-python-debugger 'debugpy)
-  			 :config
-  			 (require 'dap-python))
+  ;; (use-package python-mode
+  ;; 			 :ensure t
+  ;; 			 :hook (python-mode . lsp-deferred)
+  ;; 			 :custom
+  ;; 			 (dap-python-debugger 'debugpy)
+  ;; 			 :config
+  ;; 			 (require 'dap-python))
 
 #+end_src
 
@@ -1770,12 +1801,12 @@
 
 #+begin_src emacs-lisp
     (use-package company
-      :after lsp-mode
-      :hook (lsp-mode . company-mode)
+;      :after lsp-mode
+;      :hook (lsp-mode . company-mode)
       :bind (:map company-active-map
                   ("<tab>" . company-complete-selection))
-      (:map lsp-mode-map
-            ("<tab>" . company-indent-or-complete-common))
+;      (:map lsp-mode-map
+;            ("<tab>" . company-indent-or-complete-common))
       :custom
       (company-minimum-prefix-length 1)
       (company-idle-delay 0.5))
@@ -3260,7 +3291,7 @@ for task dependencies
 
 
 #+begin_src emacs-lisp
-  (global-display-line-numbers-mode)
+;  (global-display-line-numbers-mode)
   (add-to-list 'safe-local-variable-values '(org-roam-directory . "~/Documents/wizr/meetingnotes"))
   (add-to-list 'safe-local-variable-values '(org-roam-db-location . "~/Documents/wizr/meetingnotes/org-roam.db"))
 
@@ -3801,4 +3832,21 @@ for task dependencies
             (setq buffer-read-only nil))))
           nil)
       (buffer-string)))))
+#+end_src
+* subtitle editing
+
+#+begin_src emacs-lisp
+  (use-package subed
+    :ensure t
+    :config
+    (add-hook 'subed-mode-hook 'save-place-local-mode)
+    (add-hook 'subed-mode-hook 'turn-on-auto-fill)
+    (add-hook 'subed-mode-hook (lambda () (setq-local fill-column 40)))
+    (add-hook 'subed-mode-hook 'subed-enable-pause-while-typing)
+    (add-hook 'subed-mode-hook 'subed-enable-sync-point-to-player)
+    (add-hook 'subed-mode-hook 'subed-sync-player-to-point)
+    (add-hook 'subed-mode-hook 'subed-enable-replay-adjusted-subtitle)
+    (add-hook 'subed-mode-hook 'subed-enable-loop-over-current-subtitle)
+    (add-hook 'subed-mode-hook 'subed-enable-show-cps)
+    )
 #+end_src
