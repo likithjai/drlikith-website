@@ -1,5 +1,25 @@
-theme = "HelloFriendNG"
-baseURL = 'http://localhost:1313'
-title = 'likith blog'
-contentDir = "content"
-publishDir = "docs"
+# The URL the site will be built for
+base_url = "https://drlikith.com"
+
+# The site title and description
+title = "My Basic Zola Site"
+description = "A simple static site built with Zola"
+
+# The default language
+default_language = "en"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to minify the html output
+minify_html = false
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+[markdown]
+# Whether to do syntax highlighting
+highlight_code = true
+
+[extra]
+# Put all your custom variables here
