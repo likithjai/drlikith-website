@@ -1,0 +1,4 @@
+theme = "HelloFriendNG"
+baseURL = 'http://localhost:1313'
+title = 'likith blog'
+contentDir = "content"

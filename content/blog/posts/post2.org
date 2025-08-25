@@ -1,7 +1,0 @@
-#+title: second post
-#+date: <2025-06-08 Sun>
-#+description: my second post
-#+options: toc:nil
-#+export_file_name: ../../../blog/posts/post2
-
-writing about things
