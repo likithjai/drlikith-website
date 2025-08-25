@@ -1,46 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Posts on likith blog</title>
-        <link>http://localhost:1313/posts/</link>
-        <description>Recent content in Posts on likith blog</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>en</language>
-        <lastBuildDate>Sun, 08 Jun 2025 15:42:00 +0530</lastBuildDate>
-        <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>book review: The Dragon Republic by RF Kuang</title>
-            <link>http://localhost:1313/posts/2025-06-08-book-review-the-dragon-republic-by-rf-kuang/</link>
-            <pubDate>Sun, 08 Jun 2025 15:42:00 +0530</pubDate>
-            
-            <guid>http://localhost:1313/posts/2025-06-08-book-review-the-dragon-republic-by-rf-kuang/</guid>
-            <description>&lt;p&gt;I absolutely loved this book and cannot wait to read the final installment of this trilogy&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>I absolutely loved this book and cannot wait to read the final installment of this trilogy</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>coming back to life online</title>
-            <link>http://localhost:1313/posts/2025-06-08-coming-back-to-life-online/</link>
-            <pubDate>Sun, 08 Jun 2025 14:44:00 +0530</pubDate>
-            
-            <guid>http://localhost:1313/posts/2025-06-08-coming-back-to-life-online/</guid>
-            <description>&lt;p&gt;If you had told me two years ago that, two years from then, I would be in Bangalore, doing primarily video-editing as a job, for my friend&amp;rsquo;s financial advisory company, I&amp;rsquo;d probably laugh it off as completely insane. I have found myself in similar situations over the past decade or so, where my life at one point in time, would probably have been unrecognisable to me 2-4 years prior. For a big chunk of my life, I was barely in touch with what I really wanted to do, but I&amp;rsquo;m happy to say that that has gradually been getting further and further away from the truth.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>If you had told me two years ago that, two years from then, I would be in Bangalore, doing primarily video-editing as a job, for my friend&rsquo;s financial advisory company, I&rsquo;d probably laugh it off as completely insane. I have found myself in similar situations over the past decade or so, where my life at one point in time, would probably have been unrecognisable to me 2-4 years prior. For a big chunk of my life, I was barely in touch with what I really wanted to do, but I&rsquo;m happy to say that that has gradually been getting further and further away from the truth.</p>
-<h2 id="career">career</h2>
-<p>After spending five years learning the ins and outs of how atoms behave, what electrons do, and their implications thereof, I slowly came to a painful realisation towards the end: While I genuinely enjoyed certain aspects of it, I didn&rsquo;t really want to keep doing research for the rest of my career. I knew this beyond a shadow of doubt during my postdoc position for which I did DFT (<a href="https://sci-hub.se/10.1021/jp960669l">Density Functional Theory</a>) for a primarily experimental research group. Of course this pursuit itself taught me a lot of lessons that have come to be invaluable to me, as a person, and this is true for the topic too.</p>
-<p>But I successfully pivoted towards data analytics and I did enjoy it a lot, and thought, for a second, that I had found my path. Working for Deloitte (for <a href="https://www.mtb.com/personal">M&amp;T Bank</a> as a client) was a lot of fun. It brought  the problem-solving aspect that I enjoyed during my <a href="https://scholar.google.com/citations?user=jrlwT9IAAAAJ&amp;hl=en">research</a> and combined that with a fast-paced, high-stakes environment with a supportive manager, and in this environment, I daresay I thrived.</p>
-<p>All seemed well, until I decided to come back to Bangalore, and continue along the same career path. Things didn&rsquo;t work out as I expected, and the next thing I knew, I had been job hunting for about a year and a half. I had been learning video editing (using only <a href="https://ffmpeg.org/">ffmpeg</a> at the time, mind you) as a hobby. Cut to a couple of months later, and I was now primarily a video editor at <a href="https://www.instagram.com/getwizr/?hl=en">Wizr Wealth</a>, a company that I am proud to say my friend had started a few years ago. Some of the perks include:</p>
-<ul>
-<li>I get to use whatever software I want for the work that I do. I get to use python, emacs, and linux itself, and it really does feel like home in a lot of ways (looking at you, <a href="https://mse.ufl.edu/people/name/nancy-ruzycki/">Dr. R</a>)</li>
-<li>I get to use my camera on a regular basis, and I have gotten to learn lots of things about studios, lighting, etc.</li>
-<li>I am not bound by rigid hierarchies and meaningless (to me) rules which is typical, but of course, not always true, in larger organisations (in my experience at least)</li>
-<li>I get to code, but I don&rsquo;t really <em>have</em> to</li>
-</ul>
-<h2 id="climbing-journey">climbing journey</h2>
-<p>I first tried rock climbing in Seattle. It brought me uncomfortably and scarily close to my fear of heights/falling. But I started to notice something when I started trying it more. I had managed to go around 5 years being in Golden, Colorado, being so sure of my fear, that I always refused to try it even though it was practically everywhere. I noticed myself mentally so engaged with the activity, that I wasn&rsquo;t able to think of anything else. It wasn&rsquo;t too many things to hold at once in my mental bandwidth/scope of attention, but, a little bit more importantly, not too few either. Which was what has made continuing to go to the gym much harder for me. Not only was it the right level of mentally engaging, I also noticed my sleep improving, my general energy levels, mental state, and just generally how I felt about myself all saw improvements. Gainesville had a smaller-sized, more cave-inspired routes matching the climbing territory of the gym. I even used to take my climbing shoes when I travelled for work, and tried to go there before having to head back. This has been a lot of fun too. Currently, I&rsquo;ve been going to one in Bangalore for probably around a year-and-a-half now, and I have liked it a lot, although there definitely have been some off-seasons, I am genuinely surprised that I have persisted this long with something even after &lsquo;setbacks&rsquo;. I just sent my second Level-4, which, I guess is equivalent to V3-V4 at least. It wasn&rsquo;t easy at all. It hasn&rsquo;t been easy, or at least, I remember it being easier to do some moves that take more strength for me now, but the progress I have been noticing in myself has been consistent. I decided to invest in myself and bought the 6-month membership, which is about to enter the last month in a few days. It has been very rewarding to go, and as a bonus, the more I go, the lesser each session costs. I participated in a boulder social event where I had a lot of fun, and did pretty well in identifying the levels I was relatively comfortable with and made the most of the time. I did try some harder ones, most of them turned out to be level-4s, one of which I projected the entire day today and finally sent (completed) it.</p>
-]]></content>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Posts on My New Hugo Site</title>
+    <link>https://example.org/posts/</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
 </rss>

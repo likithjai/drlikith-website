@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>likith blog</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on likith blog</description>
+    <title>My New Hugo Site</title>
+    <link>https://example.org/</link>
+    <description>Recent content on My New Hugo Site</description>
     <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 08 Jun 2025 15:42:00 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>book review: The Dragon Republic by RF Kuang</title>
-      <link>http://localhost:1313/posts/2025-06-08-book-review-the-dragon-republic-by-rf-kuang/</link>
-      <pubDate>Sun, 08 Jun 2025 15:42:00 +0530</pubDate>
-      <guid>http://localhost:1313/posts/2025-06-08-book-review-the-dragon-republic-by-rf-kuang/</guid>
-      <description>&lt;p&gt;I absolutely loved this book and cannot wait to read the final installment of this trilogy&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>coming back to life online</title>
-      <link>http://localhost:1313/posts/2025-06-08-coming-back-to-life-online/</link>
-      <pubDate>Sun, 08 Jun 2025 14:44:00 +0530</pubDate>
-      <guid>http://localhost:1313/posts/2025-06-08-coming-back-to-life-online/</guid>
-      <description>&lt;p&gt;If you had told me two years ago that, two years from then, I would be in Bangalore, doing primarily video-editing as a job, for my friend&amp;rsquo;s financial advisory company, I&amp;rsquo;d probably laugh it off as completely insane. I have found myself in similar situations over the past decade or so, where my life at one point in time, would probably have been unrecognisable to me 2-4 years prior. For a big chunk of my life, I was barely in touch with what I really wanted to do, but I&amp;rsquo;m happy to say that that has gradually been getting further and further away from the truth.&lt;/p&gt;</description>
-    </item>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
