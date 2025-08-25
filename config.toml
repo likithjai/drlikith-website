@@ -1,5 +1,6 @@
 # The URL the site will be built for
 base_url = "https://drlikith.com"
+output_dir = "docs"
 
 # The site title and description
 title = "My Basic Zola Site"
