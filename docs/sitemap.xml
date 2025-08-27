@@ -11,11 +11,30 @@
         <loc>https://drlikith.com/blog/</loc>
     </url>
     <url>
-        <loc>https://drlikith.com/blog/first-post/</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://drlikith.com/blog/coming-back-to-life/</loc>
+        <lastmod>2025-04-26</lastmod>
+    </url>
+    <url>
+        <loc>https://drlikith.com/blog/intro-rust/</loc>
+        <lastmod>2025-08-27</lastmod>
     </url>
     <url>
         <loc>https://drlikith.com/blog/second-post/</loc>
         <lastmod>2024-01-20</lastmod>
+    </url>
+    <url>
+        <loc>https://drlikith.com/categories/</loc>
+    </url>
+    <url>
+        <loc>https://drlikith.com/categories/personal/</loc>
+    </url>
+    <url>
+        <loc>https://drlikith.com/categories/tech/</loc>
+    </url>
+    <url>
+        <loc>https://drlikith.com/projects/</loc>
+    </url>
+    <url>
+        <loc>https://drlikith.com/tags/</loc>
     </url>
 </urlset>

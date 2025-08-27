@@ -1,0 +1,25 @@
+{
+  "name": "drlikith-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./static/css/input.css -o ./static/css/output.css --minify",
+    "watch:css": "tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/likithjai/drlikith-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/likithjai/drlikith-website/issues"
+  },
+  "homepage": "https://github.com/likithjai/drlikith-website#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}

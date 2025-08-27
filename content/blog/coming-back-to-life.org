@@ -1,0 +1,36 @@
+#+title: coming back to life
+#+author: likith
+#+date: <2025-04-26 Sat>
+#+description: a gradual return to posting online
+#+options: toc:nil
+
+#+begin_src markdown
++++
+title = "coming back to life"
+date = 2025-04-26
+taxonomies = { categories = ["personal"] }
++++
+#+end_src
+
+If you had told me two years ago that, two years from then, I would be in Bangalore, doing primarily video-editing as a job, for my friend's financial advisory company, I'd probably laugh it off as completely insane. I have found myself in similar situations over the past decade or so, where my life at one point in time, would probably have been unrecognisable to me 2-4 years prior. For a big chunk of my life, I was barely in touch with what I really wanted to do, but I'm happy to say that that has gradually been getting further and further away from the truth.
+
+* career
+
+After spending five years learning the ins and outs of how atoms behave, what electrons do, and their implications thereof, I slowly came to a painful realisation towards the end: While I genuinely enjoyed certain aspects of it, I didn't really want to keep doing research for the rest of my career. I knew this beyond a shadow of doubt during my postdoc position for which I did DFT ([[https://sci-hub.se/10.1021/jp960669l][Density Functional Theory]]) for a primarily experimental research group. Of course this pursuit itself taught me a lot of lessons that have come to be invaluable to me, as a person, and this is true for the topic too.
+
+But I successfully pivoted towards data analytics and I did enjoy it a lot, and thought, for a second, that I had found my path. Working for Deloitte (for [[https://www.mtb.com/personal][M&T Bank]] as a client) was a lot of fun. It brought  the problem-solving aspect that I enjoyed during my [[https://scholar.google.com/citations?user=jrlwT9IAAAAJ&hl=en][research]] and combined that with a fast-paced, high-stakes environment with a supportive manager, and in this environment, I daresay I thrived.
+
+All seemed well, until I decided to come back to Bangalore, and continue along the same career path. Things didn't work out as I expected, and the next thing I knew, I had been job hunting for about a year and a half. I had been learning video editing (using only [[https://ffmpeg.org/][ffmpeg]] at the time, mind you) as a hobby. Cut to a couple of months later, and I was now primarily a video editor at [[https://www.instagram.com/getwizr/?hl=en][Wizr Wealth]], a company that I am proud to say my friend had started a few years ago. Some of the perks include:
+
++ I get to use whatever software I want for the work that I do. I get to use python, emacs, and linux itself, and it really does feel like home in a lot of ways (looking at you, [[https://mse.ufl.edu/people/name/nancy-ruzycki/][Dr. R]])
++ I get to use my camera on a regular basis, and I have gotten to learn lots of things about studios, lighting, etc.
++ I am not bound by rigid hierarchies and meaningless (to me) rules which is typical, but of course, not always true, in larger organisations (in my experience at least)
++ I get to code, but I don't really /have/ to
+
+
+* "family" :noexport:
+I don't want this to get out there, but I need a place to express this. Almost every single person that is, by sheer definition of the term family, has come to be fully disconnected from me. The people who gave birth to me kicked me out of their house. I guess I was a bit naive of me to trust that they would support me. Apparently they have wanted to this entire time, just if and only if I follow all their rules. It felt like a grotesque replay of all my years with my grandparents, but worse. I have longed for every single one of them to go up in flames ever since. They had never been there for me anyway, and I don't know why, but there was still a part of me that wanted to be close to them, and have /some/ resemblance of a group that stuck together (my definition of family, I guess). All those years of a mirage of affection from a distance and in tiny doses, if any, somehow meant nothing to them, and everything to me for a few moments. I hold with me today, to some extent, the grief. Not of losing them, but for the realisation that I really didn't have this thing that everyone around me seems to have/had. I also feel some envy sometimes, of such people. I get that the grass is greener on the other side. I really do. But I can still allow some space for that emotion while not really giving it the reigns or anything like that. It feels a little like anger, just a swelling feeling in my chest, and a voice that's going "oh, really? you think that's bad?" which is a horrible voice, I know. Morally wrong, I get that too, but it's there. I want to let go of the loathing and the wishful thinking for their death, and I'm not sure how I'd feel if I ran into them.
+
+* climbing journey
+
+I first tried rock climbing in Seattle. It brought me uncomfortably and scarily close to my fear of heights/falling. But I started to notice something when I started trying it more. I had managed to go around 5 years being in Golden, Colorado, being so sure of my fear, that I always refused to try it even though it was practically everywhere. I noticed myself mentally so engaged with the activity, that I wasn't able to think of anything else. It wasn't too many things to hold at once in my mental bandwidth/scope of attention, but, a little bit more importantly, not too few either. Which was what has made continuing to go to the gym much harder for me. Not only was it the right level of mentally engaging, I also noticed my sleep improving, my general energy levels, mental state, and just generally how I felt about myself all saw improvements. Gainesville had a smaller-sized, more cave-inspired routes matching the climbing territory of the gym. I even used to take my climbing shoes when I travelled for work, and tried to go there before having to head back. This has been a lot of fun too. Currently, I've been going to one in Bangalore for probably around a year-and-a-half now, and I have liked it a lot, although there definitely have been some off-seasons, I am genuinely surprised that I have persisted this long with something even after 'setbacks'. I just sent my second Level-4, which, I guess is equivalent to V3-V4 at least. It wasn't easy at all. It hasn't been easy, or at least, I remember it being easier to do some moves that take more strength for me now, but the progress I have been noticing in myself has been consistent. I decided to invest in myself and bought the 6-month membership, which is about to enter the last month in a few days. It has been very rewarding to go, and as a bonus, the more I go, the lesser each session costs. I participated in a boulder social event where I had a lot of fun, and did pretty well in identifying the levels I was relatively comfortable with and made the most of the time. I did try some harder ones, most of them turned out to be level-4s, one of which I projected the entire day today and finally sent (completed) it.

@@ -5,7 +5,7 @@ output_dir = "docs"
 # The site title and description
 title = "My Basic Zola Site"
 description = "A simple static site built with Zola"
-
+theme = "tranquil"
 # The default language
 default_language = "en"
 
@@ -13,14 +13,58 @@ default_language = "en"
 compile_sass = true
 
 # Whether to minify the html output
-minify_html = false
-
+minify_html = true
+taxonomies = [{ name = "tags" }, { name = "categories" }]
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
 [markdown]
 # Whether to do syntax highlighting
 highlight_code = true
+highlight_theme = "css"
+extra_syntaxes_and_themes = ["highlight_themes"]
+highlight_themes_css = [
+{ theme = "tranquil-light", filename = "hl-light.css"},
+{ theme = "tranquil-dark", filename = "hl-dark.css"},
+]
+render_emoji = true
+external_links_target_blank = false
+external_links_no_follow = false
+external_links_no_referrer = false
+smar_punctuation = true
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+insert_anchor_links = "left"
 
 [extra]
+name = "likith"
+id = "likith"
+bio = "hello"
+avatar = "img/avatar.webp"
+links = [
+{ name = "GitHub", icon = "github", url = "https://github.com/likithjai" },
+{ name = "Email", icon = "email", url = "mailto:jailikith@gmail.com" },
+]
+nav_separator = " > "
+display_id = true
+projects_page = true
+blog_categorized = true
+blur_effect = true
+toc = true
+comment = false
+copy = true
+back_to_top = true
+outdate_alert = true
+outdate_alert_text_before = "this article was last updated "
+outdate_alert_text_after = " days ago"
+outdate_alert_days = 120
+# call_to_action_footer_text = "call to action here"
+call_to_action_footer = true
+footer_copyright = "© 2025 likith"
+footer_credits = true
+footer_privacy_text = "Privacy Policy"
+footer_privacy = false
 # Put all your custom variables here

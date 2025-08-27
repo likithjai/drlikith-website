@@ -6,4 +6,4 @@
 	url = https://github.com/rhazdon/hugo-theme-hello-friend-ng
 [submodule "themes/tranquil"]
 	path = themes/tranquil
-	url = https://github.com/TeaDrinkingProgrammer/tranquil.git
+	url = https://github.com/TeaDrinkingProgrammer/tranquil

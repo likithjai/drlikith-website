@@ -1,0 +1,27 @@
+    +++
+    title = "coming back to life"
+    date = 2025-04-26
+    taxonomies = { categories = ["personal"] }
+    +++
+
+If you had told me two years ago that, two years from then, I would be in Bangalore, doing primarily video-editing as a job, for my friend&rsquo;s financial advisory company, I&rsquo;d probably laugh it off as completely insane. I have found myself in similar situations over the past decade or so, where my life at one point in time, would probably have been unrecognisable to me 2-4 years prior. For a big chunk of my life, I was barely in touch with what I really wanted to do, but I&rsquo;m happy to say that that has gradually been getting further and further away from the truth.
+
+
+# career
+
+After spending five years learning the ins and outs of how atoms behave, what electrons do, and their implications thereof, I slowly came to a painful realisation towards the end: While I genuinely enjoyed certain aspects of it, I didn&rsquo;t really want to keep doing research for the rest of my career. I knew this beyond a shadow of doubt during my postdoc position for which I did DFT ([Density Functional Theory](https://sci-hub.se/10.1021/jp960669l)) for a primarily experimental research group. Of course this pursuit itself taught me a lot of lessons that have come to be invaluable to me, as a person, and this is true for the topic too.
+
+But I successfully pivoted towards data analytics and I did enjoy it a lot, and thought, for a second, that I had found my path. Working for Deloitte (for [M&T Bank](https://www.mtb.com/personal) as a client) was a lot of fun. It brought  the problem-solving aspect that I enjoyed during my [research](https://scholar.google.com/citations?user=jrlwT9IAAAAJ&hl=en) and combined that with a fast-paced, high-stakes environment with a supportive manager, and in this environment, I daresay I thrived.
+
+All seemed well, until I decided to come back to Bangalore, and continue along the same career path. Things didn&rsquo;t work out as I expected, and the next thing I knew, I had been job hunting for about a year and a half. I had been learning video editing (using only [ffmpeg](https://ffmpeg.org/) at the time, mind you) as a hobby. Cut to a couple of months later, and I was now primarily a video editor at [Wizr Wealth](https://www.instagram.com/getwizr/?hl=en), a company that I am proud to say my friend had started a few years ago. Some of the perks include:
+
+-   I get to use whatever software I want for the work that I do. I get to use python, emacs, and linux itself, and it really does feel like home in a lot of ways (looking at you, [Dr. R](https://mse.ufl.edu/people/name/nancy-ruzycki/))
+-   I get to use my camera on a regular basis, and I have gotten to learn lots of things about studios, lighting, etc.
+-   I am not bound by rigid hierarchies and meaningless (to me) rules which is typical, but of course, not always true, in larger organisations (in my experience at least)
+-   I get to code, but I don&rsquo;t really *have* to
+
+
+# climbing journey
+
+I first tried rock climbing in Seattle. It brought me uncomfortably and scarily close to my fear of heights/falling. But I started to notice something when I started trying it more. I had managed to go around 5 years being in Golden, Colorado, being so sure of my fear, that I always refused to try it even though it was practically everywhere. I noticed myself mentally so engaged with the activity, that I wasn&rsquo;t able to think of anything else. It wasn&rsquo;t too many things to hold at once in my mental bandwidth/scope of attention, but, a little bit more importantly, not too few either. Which was what has made continuing to go to the gym much harder for me. Not only was it the right level of mentally engaging, I also noticed my sleep improving, my general energy levels, mental state, and just generally how I felt about myself all saw improvements. Gainesville had a smaller-sized, more cave-inspired routes matching the climbing territory of the gym. I even used to take my climbing shoes when I travelled for work, and tried to go there before having to head back. This has been a lot of fun too. Currently, I&rsquo;ve been going to one in Bangalore for probably around a year-and-a-half now, and I have liked it a lot, although there definitely have been some off-seasons, I am genuinely surprised that I have persisted this long with something even after &rsquo;setbacks&rsquo;. I just sent my second Level-4, which, I guess is equivalent to V3-V4 at least. It wasn&rsquo;t easy at all. It hasn&rsquo;t been easy, or at least, I remember it being easier to do some moves that take more strength for me now, but the progress I have been noticing in myself has been consistent. I decided to invest in myself and bought the 6-month membership, which is about to enter the last month in a few days. It has been very rewarding to go, and as a bonus, the more I go, the lesser each session costs. I participated in a boulder social event where I had a lot of fun, and did pretty well in identifying the levels I was relatively comfortable with and made the most of the time. I did try some harder ones, most of them turned out to be level-4s, one of which I projected the entire day today and finally sent (completed) it.
+
