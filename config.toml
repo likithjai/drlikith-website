@@ -3,8 +3,8 @@ base_url = "https://drlikith.com"
 output_dir = "docs"
 
 # The site title and description
-title = "My Basic Zola Site"
-description = "A simple static site built with Zola"
+title = "drlikith blog"
+description = "an outlet for my thoughts, musings, and other interests"
 theme = "tranquil"
 # The default language
 default_language = "en"
@@ -16,7 +16,7 @@ compile_sass = true
 minify_html = true
 taxonomies = [{ name = "tags" }, { name = "categories" }]
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = false
+build_search_index = true
 
 [markdown]
 # Whether to do syntax highlighting
@@ -31,7 +31,7 @@ render_emoji = true
 external_links_target_blank = false
 external_links_no_follow = false
 external_links_no_referrer = false
-smar_punctuation = true
+smart_punctuation = true
 
 [slugify]
 paths = "on"
@@ -40,10 +40,10 @@ anchors = "on"
 insert_anchor_links = "left"
 
 [extra]
-name = "likith"
-id = "likith"
-bio = "hello"
-avatar = "img/avatar.webp"
+name = ""
+id = ""
+bio = ""
+#avatar = "img/avatar.webp"
 links = [
 { name = "GitHub", icon = "github", url = "https://github.com/likithjai" },
 { name = "Email", icon = "email", url = "mailto:jailikith@gmail.com" },
@@ -57,9 +57,9 @@ toc = true
 comment = false
 copy = true
 back_to_top = true
-outdate_alert = true
-outdate_alert_text_before = "this article was last updated "
-outdate_alert_text_after = " days ago"
+outdate_alert = false
+#outdate_alert_text_before = "this article was last updated "
+#outdate_alert_text_after = " days ago"
 outdate_alert_days = 120
 # call_to_action_footer_text = "call to action here"
 call_to_action_footer = true
