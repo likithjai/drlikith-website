@@ -2,8 +2,6 @@
 title = "Blog"
 description = "my blog site"
 sort_by = "date"
-template = "blog.html"
-page_template = "post.html"
 insert_anchor_links = "left"
 generate_feeds = true
 

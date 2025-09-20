@@ -1,10 +1,16 @@
 {% extends "base.html" %}
-
+<!--content block-->
 {% block content %}
-<h1>{{ section.title }}</h1>
-{{ section.content | safe }}
+<h1>
+  {% if section is defined and section.title is defined %} {{ section.title }}
+  {% endif %}
+</h1>
 
-{% if section.pages %}
+{% if section is defined and section.content is defined %} {{ section.content |
+safe }} {% endif %}
+<!--if block-->
+{% if section is defined and section.pages %}
+<!--start of if block-->
 <h2>Recent Posts</h2>
 <ul>
   {% for page in section.pages | slice(end=5) %}
@@ -15,4 +21,5 @@
   {% endfor %}
 </ul>
 {% endif %}
+<!--end of body-->
 {% endblock %}

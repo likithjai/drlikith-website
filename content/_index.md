@@ -1,5 +1,4 @@
 +++
-template = "home.html"
 [extra]
 land = 'en'
 +++

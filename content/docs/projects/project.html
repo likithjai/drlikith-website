@@ -1,0 +1,40 @@
+{% extends "_base.html" %} {% block page %}projects{% endblock page %} {% block
+title %}Projects – {{ config.title }}{% endblock title %} {% block desc
+%}Projects by {{ config.title }}{% endblock desc %} {% block content %}
+<main class="max-w-5xl mx-auto py-12 px-4">
+  <h1 class="text-3xl font-bold mb-8">Projects</h1>
+  <div class="grid gap-6 md:grid-cols-2">
+    {% for project in section.pages %}
+    <div
+      class="border rounded-lg p-6 hover:shadow-lg transition-shadow duration-200"
+    >
+      {% if project.extra.image %}
+      <img
+        src="{{ config.base_url }}/{{ project.extra.image }}"
+        alt="{{ project.title }}"
+        class="mb-4 rounded-lg"
+      />
+      {% endif %}
+      <h2 class="text-xl font-semibold mb-2">
+        <a href="{{ project.permalink }}" class="hover:text-sky-600"
+          >{{ project.title }}</a
+        >
+      </h2>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">
+        {{ project.description | safe }}
+      </p>
+      {% if project.extra.link %}
+      <a
+        href="{{ project.extra.link }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sky-600 hover:underline"
+      >
+        Visit Project →
+      </a>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</main>
+{% endblock content %}

@@ -48,6 +48,9 @@ links = [
 { name = "GitHub", icon = "github", url = "https://github.com/likithjai" },
 { name = "Email", icon = "email", url = "mailto:jailikith@gmail.com" },
 ]
+papermod = [
+{ theme = "dark" },
+]
 nav_separator = " > "
 display_id = true
 projects_page = true
@@ -67,4 +70,5 @@ footer_copyright = "© 2025 likith"
 footer_credits = true
 footer_privacy_text = "Privacy Policy"
 footer_privacy = false
+color_scheme = "dark"
 # Put all your custom variables here
