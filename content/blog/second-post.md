@@ -1,6 +1,7 @@
 +++
 title = "Getting Started with Static Sites"
 date = 2024-01-20
+draft = true
 +++
 
 # Getting Started with Static Sites
